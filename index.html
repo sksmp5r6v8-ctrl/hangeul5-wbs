@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0f172a">
-<title>ハン検5級 Daily WBS 2026</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>ハン検5級 Daily WBS</title>
 <style>
-:root{--bg:#f4f6f8;--card:#fff;--ink:#15181d;--muted:#68707e;--line:#e1e5ea;--nav:#101827;--green:#edf8f1;--warn:#fff7df;--red:#fff0f0}
+:root{--bg:#f4f6f8;--card:#fff;--ink:#15181d;--muted:#68707e;--line:#e1e5ea;--nav:#101827;--green:#edf8f1;--warn:#fff7df;--red:#fff0f0;--off:#f5f5f5}
 *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink)}
 header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .wrap{max-width:1160px;margin:auto;padding:14px 16px} h1{font-size:22px;margin:0 0 4px} .sub{font-size:12px;color:var(--muted)}
@@ -22,7 +23,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
 .controls{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 14px} button,select{background:white;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px} button.primary{background:var(--nav);color:white;border-color:var(--nav)}
 .week{margin:16px 0 22px;scroll-margin-top:80px} .weektitle{display:flex;justify-content:space-between;align-items:end;margin:0 2px 8px} .weektitle h3{font-size:15px;margin:0} .weektitle span{font-size:11px;color:var(--muted)}
 .daygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.daycard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden} .daycard.current{outline:2px solid var(--nav)} .daycard.exam{background:var(--red)}
+.daycard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden} .daycard.current{outline:2px solid var(--nav)} .daycard.exam{background:var(--red)} .daycard.offday{background:var(--off)}
 .daycard summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:8px;padding:10px} .daycard summary::-webkit-details-marker{display:none} .daycard summary b{font-size:12.5px} .daycard summary small{display:block;color:var(--muted);font-size:10px;margin-top:2px} .daymins{font-size:11px;color:var(--muted);white-space:nowrap}
 .facts{display:grid;grid-template-columns:1fr;gap:5px;padding:0 10px 8px} .facts div{background:#f7f8fa;border-radius:9px;padding:7px} .facts b{display:block;font-size:10px;color:var(--muted)} .facts span{display:block;font-size:11px;margin-top:2px;line-height:1.35}
 .tasklist{padding:0 10px} .memo{margin:7px 10px 10px;width:calc(100% - 20px);min-height:56px;border:1px solid var(--line);border-radius:9px;padding:8px;font:inherit;font-size:12px}
@@ -32,11 +33,10 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
 @media(max-width:520px){.daygrid{grid-template-columns:1fr}}
 </style>
 </head>
- <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <body>
-<header><div class="wrap"><h1>🇰🇷 ハン検5級 Daily WBS</h1><div class="sub">2026/8/18 → 11/8 ｜ 毎日20〜30分 ｜ 単語500＋TypeHangul＋できる韓国語＋2023年版過去問</div></div></header>
+<header><div class="wrap"><h1>🇰🇷 ハン検5級 Daily WBS</h1><div class="sub">2026/8/18 → 11/8 ｜ 毎日20〜30分 ｜ 8/18〜8/19はアプリ中心、8/20〜8/25はペウギ5級、8/26は移動日、8/27から東京教材再開</div></div></header>
 <main class="wrap">
-<div class="notice"><b>修正版：</b>タスク本文をHTMLに直接埋め込みました。JavaScriptが止まっても日別タスクは表示されます。チェック保存・フィルターはブラウザ機能が使える場合に動作します。なお8/18〜11/8は両日を含めて83日です。</div>
+<div class="notice"><b>更新版：</b>8/18〜8/19は東京にある教材を使わず、TypeHangul・単語帳500・ハングル検定アプリ中心に変更しました。8/20〜8/25は <b>ペウギ5級</b> を主教材に反映。8/26は22時着のため <b>移動日・学習なし</b>。8/27から『できる韓国語 初級Ⅰ』を再開します。<br>ホーム画面アイコン用に <code>apple-touch-icon.png</code> も参照しています。</div>
 <section class="kpis">
  <div class="kpi"><b>82日</b><span>8/18時点で本番まで</span></div>
  <div class="kpi"><b id="doneDays">0 / 83</b><span>完了した日</span></div>
@@ -46,28 +46,28 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
 
 <section class="today" id="today">
  <h2>今日の学習｜8/18（火）</h2>
- <div class="meta">ハングル基礎 ・ 合計 28分</div>
+ <div class="meta">東京教材なし・助走 ・ 合計 25分</div>
  <div class="todaygrid">
    <div class="todaybox">
     <label class="todaytask" data-task-row="2026-08-18:typehangul:0">
       <input type="checkbox" class="taskcheck" data-task="2026-08-18:typehangul:0">
-      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
-      <span class="mins">10分</span>
+      <span class="tasktext">TypeHangul：基本母音・基本子音の打鍵</span>
+      <span class="mins">12分</span>
     </label>
     <label class="todaytask" data-task-row="2026-08-18:vocab:1">
       <input type="checkbox" class="taskcheck" data-task="2026-08-18:vocab:1">
       <span class="tasktext">単語帳500：新出 001〜009＋前日復習</span>
       <span class="mins">8分</span>
     </label>
-    <label class="todaytask" data-task-row="2026-08-18:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-18:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
-      <span class="mins">10分</span>
+    <label class="todaytask" data-task-row="2026-08-18:app:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-18:app:2">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
     </label></div>
    <div class="todayfacts">
-     <div class="todayfact"><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
+     <div class="todayfact"><b>📘 学習テーマ</b><span>東京教材なし期間：TypeHangulで基本母音・子音に入る</span></div>
      <div class="todayfact"><b>🧠 単語帳500</b><span>新出 001〜009</span></div>
-     <div class="todayfact"><b>⌨️ TypeHangul</b><span>10分</span></div>
+     <div class="todayfact"><b>⌨️ TypeHangul</b><span>12分</span></div>
    </div>
  </div>
 </section>
@@ -78,7 +78,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
  <select id="statusFilter"><option value="">全状態</option><option value="open">未完了</option><option value="done">完了</option></select>
  <button id="clearBtn" type="button">チェックを全解除</button>
 </div>
-<div class="previewhelp">※ この上のボタンすら反応しない場合は、iPhoneの「ファイルプレビュー」でJavaScriptが無効になっています。その場合でも下の日別タスクは読めます。ブラウザで開くと保存・絞り込みが使えます。</div>
+<div class="previewhelp">※ JavaScriptが使える環境では、チェック保存・絞り込みが動作します。</div>
 
 
     <section class="week" data-week="1">
@@ -89,169 +89,189 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
       <div class="daygrid">
         <details class="daycard current" data-day="2026-08-18" id="day-2026-08-18" open>
           <summary>
-            <span><b>Day 1｜08/18（火）</b><small>ハングル基礎</small></span>
-            <span class="daymins">28分</span>
+            <span><b>Day 1｜08/18（火）</b><small>東京教材なし・助走</small></span>
+            <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
+            <div><b>📘 学習テーマ</b><span>東京教材なし期間：TypeHangulで基本母音・子音に入る</span></div>
             <div><b>🧠 単語帳500</b><span>001〜009</span></div>
-            <div><b>⌨️ TypeHangul</b><span>10分</span></div>
+            <div><b>⌨️ TypeHangul</b><span>12分</span></div>
           </div>
           <div class="tasklist">
     <label class="taskline" data-task-row="2026-08-18:typehangul:0">
       <input type="checkbox" class="taskcheck" data-task="2026-08-18:typehangul:0">
-      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
-      <span class="mins">10分</span>
+      <span class="tasktext">TypeHangul：基本母音・基本子音の打鍵</span>
+      <span class="mins">12分</span>
     </label>
     <label class="taskline" data-task-row="2026-08-18:vocab:1">
       <input type="checkbox" class="taskcheck" data-task="2026-08-18:vocab:1">
       <span class="tasktext">単語帳500：新出 001〜009＋前日復習</span>
       <span class="mins">8分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-18:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-18:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-18:app:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-18:app:2">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-18" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details>
         <details class="daycard" data-day="2026-08-19" id="day-2026-08-19" >
           <summary>
-            <span><b>Day 2｜08/19（水）</b><small>ハングル基礎</small></span>
-            <span class="daymins">28分</span>
+            <span><b>Day 2｜08/19（水）</b><small>東京教材なし・助走</small></span>
+            <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
+            <div><b>📘 学習テーマ</b><span>東京教材なし期間：母音・子音を読めるようにする</span></div>
             <div><b>🧠 単語帳500</b><span>010〜018</span></div>
-            <div><b>⌨️ TypeHangul</b><span>10分</span></div>
+            <div><b>⌨️ TypeHangul</b><span>12分</span></div>
           </div>
           <div class="tasklist">
     <label class="taskline" data-task-row="2026-08-19:typehangul:0">
       <input type="checkbox" class="taskcheck" data-task="2026-08-19:typehangul:0">
-      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
-      <span class="mins">10分</span>
+      <span class="tasktext">TypeHangul：基本母音・基本子音の打鍵</span>
+      <span class="mins">12分</span>
     </label>
     <label class="taskline" data-task-row="2026-08-19:vocab:1">
       <input type="checkbox" class="taskcheck" data-task="2026-08-19:vocab:1">
       <span class="tasktext">単語帳500：新出 010〜018＋前日復習</span>
       <span class="mins">8分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-19:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-19:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-19:app:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-19:app:2">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-19" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details>
         <details class="daycard" data-day="2026-08-20" id="day-2026-08-20" >
           <summary>
-            <span><b>Day 3｜08/20（木）</b><small>ハングル基礎</small></span>
-            <span class="daymins">28分</span>
+            <span><b>Day 3｜08/20（木）</b><small>東京教材なし・ペウギ導入</small></span>
+            <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
-            <div><b>🧠 単語帳500</b><span>019〜027</span></div>
-            <div><b>⌨️ TypeHangul</b><span>10分</span></div>
+            <div><b>📘 学習テーマ</b><span>ペウギ5級 開始：ハングルの母音・子音</span></div>
+            <div><b>🧠 単語帳500</b><span>019〜026</span></div>
+            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
           </div>
           <div class="tasklist">
-    <label class="taskline" data-task-row="2026-08-20:typehangul:0">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-20:typehangul:0">
-      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-20:peugi:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-20:peugi:0">
+      <span class="tasktext">ペウギ5級：ハングルの母音・子音</span>
+      <span class="mins">12分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-20:vocab:1">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-20:vocab:1">
-      <span class="tasktext">単語帳500：新出 019〜027＋前日復習</span>
+    <label class="taskline" data-task-row="2026-08-20:typehangul:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-20:typehangul:1">
+      <span class="tasktext">TypeHangul：基本母音・基本子音の打鍵</span>
       <span class="mins">8分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-20:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-20:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-20:vocab:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-20:vocab:2">
+      <span class="tasktext">単語帳500：新出 019〜026＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-20:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-20:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">2分</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-20" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details>
         <details class="daycard" data-day="2026-08-21" id="day-2026-08-21" >
           <summary>
-            <span><b>Day 4｜08/21（金）</b><small>ハングル基礎</small></span>
-            <span class="daymins">28分</span>
+            <span><b>Day 4｜08/21（金）</b><small>東京教材なし・ペウギ導入</small></span>
+            <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
-            <div><b>🧠 単語帳500</b><span>028〜036</span></div>
-            <div><b>⌨️ TypeHangul</b><span>10分</span></div>
+            <div><b>📘 学習テーマ</b><span>ペウギ5級：母音・子音の続き／読む練習</span></div>
+            <div><b>🧠 単語帳500</b><span>027〜034</span></div>
+            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
           </div>
           <div class="tasklist">
-    <label class="taskline" data-task-row="2026-08-21:typehangul:0">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-21:typehangul:0">
-      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-21:peugi:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-21:peugi:0">
+      <span class="tasktext">ペウギ5級：ハングルの母音・子音（続き）</span>
+      <span class="mins">12分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-21:vocab:1">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-21:vocab:1">
-      <span class="tasktext">単語帳500：新出 028〜036＋前日復習</span>
+    <label class="taskline" data-task-row="2026-08-21:typehangul:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-21:typehangul:1">
+      <span class="tasktext">TypeHangul：基本母音・基本子音の打鍵</span>
       <span class="mins">8分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-21:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-21:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-21:vocab:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-21:vocab:2">
+      <span class="tasktext">単語帳500：新出 027〜034＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-21:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-21:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">2分</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-21" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details>
         <details class="daycard" data-day="2026-08-22" id="day-2026-08-22" >
           <summary>
-            <span><b>Day 5｜08/22（土）</b><small>ハングル基礎</small></span>
-            <span class="daymins">28分</span>
+            <span><b>Day 5｜08/22（土）</b><small>東京教材なし・ペウギ導入</small></span>
+            <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
-            <div><b>🧠 単語帳500</b><span>037〜044</span></div>
-            <div><b>⌨️ TypeHangul</b><span>10分</span></div>
+            <div><b>📘 学習テーマ</b><span>ペウギ5級：合成母音・やゆよわ行</span></div>
+            <div><b>🧠 単語帳500</b><span>035〜042</span></div>
+            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
           </div>
           <div class="tasklist">
-    <label class="taskline" data-task-row="2026-08-22:typehangul:0">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-22:typehangul:0">
-      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-22:peugi:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-22:peugi:0">
+      <span class="tasktext">ペウギ5級：や・ゆ・よ・わ／合成母音</span>
+      <span class="mins">12分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-22:vocab:1">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-22:vocab:1">
-      <span class="tasktext">単語帳500：新出 037〜044＋前日復習</span>
+    <label class="taskline" data-task-row="2026-08-22:typehangul:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-22:typehangul:1">
+      <span class="tasktext">TypeHangul：合成母音まで反射的に読む</span>
       <span class="mins">8分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-22:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-22:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-22:vocab:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-22:vocab:2">
+      <span class="tasktext">単語帳500：新出 035〜042＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-22:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-22:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">2分</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-22" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details>
         <details class="daycard" data-day="2026-08-23" id="day-2026-08-23" >
           <summary>
-            <span><b>Day 6｜08/23（日）</b><small>ハングル基礎</small></span>
-            <span class="daymins">28分</span>
+            <span><b>Day 6｜08/23（日）</b><small>東京教材なし・ペウギ導入</small></span>
+            <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
-            <div><b>🧠 単語帳500</b><span>045〜052</span></div>
-            <div><b>⌨️ TypeHangul</b><span>10分</span></div>
+            <div><b>📘 学習テーマ</b><span>ペウギ5級：濃音・激音に慣れる</span></div>
+            <div><b>🧠 単語帳500</b><span>043〜050</span></div>
+            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
           </div>
           <div class="tasklist">
-    <label class="taskline" data-task-row="2026-08-23:typehangul:0">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-23:typehangul:0">
-      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-23:peugi:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-23:peugi:0">
+      <span class="tasktext">ペウギ5級：ハングルには『か』が3つ?!</span>
+      <span class="mins">12分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-23:vocab:1">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-23:vocab:1">
-      <span class="tasktext">単語帳500：新出 045〜052＋前日復習</span>
+    <label class="taskline" data-task-row="2026-08-23:typehangul:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-23:typehangul:1">
+      <span class="tasktext">TypeHangul：濃音・激音も含めて読む</span>
       <span class="mins">8分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-23:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-23:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-23:vocab:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-23:vocab:2">
+      <span class="tasktext">単語帳500：新出 043〜050＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-23:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-23:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">2分</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-23" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details></div>
@@ -264,197 +284,217 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
       <div class="daygrid">
         <details class="daycard" data-day="2026-08-24" id="day-2026-08-24" >
           <summary>
-            <span><b>Day 7｜08/24（月）</b><small>ハングル基礎</small></span>
-            <span class="daymins">26分</span>
+            <span><b>Day 7｜08/24（月）</b><small>東京教材なし・ペウギ導入</small></span>
+            <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
-            <div><b>🧠 単語帳500</b><span>053〜060</span></div>
-            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+            <div><b>📘 学習テーマ</b><span>ペウギ5級：パッチム入門</span></div>
+            <div><b>🧠 単語帳500</b><span>051〜058</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
           <div class="tasklist">
-    <label class="taskline" data-task-row="2026-08-24:typehangul:0">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-24:typehangul:0">
-      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+    <label class="taskline" data-task-row="2026-08-24:peugi:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-24:peugi:0">
+      <span class="tasktext">ペウギ5級：『っ・ん』／パッチム入門</span>
+      <span class="mins">14分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-24:typehangul:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-24:typehangul:1">
+      <span class="tasktext">TypeHangul：パッチムの基本形を読む</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-24:vocab:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-24:vocab:2">
+      <span class="tasktext">単語帳500：新出 051〜058＋前日復習</span>
       <span class="mins">8分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-24:vocab:1">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-24:vocab:1">
-      <span class="tasktext">単語帳500：新出 053〜060＋前日復習</span>
-      <span class="mins">8分</span>
-    </label>
-    <label class="taskline" data-task-row="2026-08-24:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-24:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-24:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-24:app:3">
+      <span class="tasktext">ハングル検定アプリ：5級基礎演習</span>
+      <span class="mins">3分</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-24" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details>
         <details class="daycard" data-day="2026-08-25" id="day-2026-08-25" >
           <summary>
-            <span><b>Day 8｜08/25（火）</b><small>ハングル基礎</small></span>
-            <span class="daymins">26分</span>
+            <span><b>Day 8｜08/25（火）</b><small>東京教材なし・ペウギ導入</small></span>
+            <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
-            <div><b>🧠 単語帳500</b><span>061〜068</span></div>
-            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+            <div><b>📘 学習テーマ</b><span>ペウギ5級：文字・発音の総確認</span></div>
+            <div><b>🧠 単語帳500</b><span>059〜066</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
           <div class="tasklist">
-    <label class="taskline" data-task-row="2026-08-25:typehangul:0">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-25:typehangul:0">
-      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+    <label class="taskline" data-task-row="2026-08-25:peugi:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-25:peugi:0">
+      <span class="tasktext">ペウギ5級：ここまでの文字・発音を総確認</span>
+      <span class="mins">14分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-25:typehangul:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-25:typehangul:1">
+      <span class="tasktext">TypeHangul：パッチムの基本形を読む</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-25:vocab:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-25:vocab:2">
+      <span class="tasktext">単語帳500：新出 059〜066＋前日復習</span>
       <span class="mins">8分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-25:vocab:1">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-25:vocab:1">
-      <span class="tasktext">単語帳500：新出 061〜068＋前日復習</span>
-      <span class="mins">8分</span>
-    </label>
-    <label class="taskline" data-task-row="2026-08-25:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-25:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-25:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-25:app:3">
+      <span class="tasktext">ハングル検定アプリ：5級基礎演習</span>
+      <span class="mins">3分</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-25" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details>
-        <details class="daycard" data-day="2026-08-26" id="day-2026-08-26" >
+        <details class="daycard offday" data-day="2026-08-26" id="day-2026-08-26" >
           <summary>
-            <span><b>Day 9｜08/26（水）</b><small>ハングル基礎</small></span>
-            <span class="daymins">26分</span>
+            <span><b>Day 9｜08/26（水）</b><small>移動日</small></span>
+            <span class="daymins">0分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
-            <div><b>🧠 単語帳500</b><span>069〜076</span></div>
-            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+            <div><b>📘 学習テーマ</b><span>東京移動日：22時着のため学習なし</span></div>
+            <div><b>🧠 単語帳500</b><span>休み</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
           <div class="tasklist">
-    <label class="taskline" data-task-row="2026-08-26:typehangul:0">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-26:typehangul:0">
-      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
-      <span class="mins">8分</span>
-    </label>
-    <label class="taskline" data-task-row="2026-08-26:vocab:1">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-26:vocab:1">
-      <span class="tasktext">単語帳500：新出 069〜076＋前日復習</span>
-      <span class="mins">8分</span>
-    </label>
-    <label class="taskline" data-task-row="2026-08-26:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-26:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
-      <span class="mins">10分</span>
+    <label class="taskline" data-task-row="2026-08-26:off:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-26:off:0">
+      <span class="tasktext">✈️ 東京移動日・学習なし</span>
+      <span class="mins">休み</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-26" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details>
         <details class="daycard" data-day="2026-08-27" id="day-2026-08-27" >
           <summary>
-            <span><b>Day 10｜08/27（木）</b><small>ハングル基礎</small></span>
-            <span class="daymins">26分</span>
+            <span><b>Day 10｜08/27（木）</b><small>東京教材再開</small></span>
+            <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
-            <div><b>🧠 単語帳500</b><span>077〜084</span></div>
-            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+            <div><b>📘 学習テーマ</b><span>できる韓国語 再開：入門（基本母音・基本子音）</span></div>
+            <div><b>🧠 単語帳500</b><span>067〜074</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
           <div class="tasklist">
-    <label class="taskline" data-task-row="2026-08-27:typehangul:0">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-27:typehangul:0">
-      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+    <label class="taskline" data-task-row="2026-08-27:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-27:vocab:0">
+      <span class="tasktext">単語帳500：新出 067〜074＋前日復習</span>
       <span class="mins">8分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-27:vocab:1">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-27:vocab:1">
-      <span class="tasktext">単語帳500：新出 077〜084＋前日復習</span>
-      <span class="mins">8分</span>
-    </label>
-    <label class="taskline" data-task-row="2026-08-27:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-27:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
+    <label class="taskline" data-task-row="2026-08-27:dekiru:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-27:dekiru:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門（基本母音・基本子音）</span>
       <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-27:peugi:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-27:peugi:2">
+      <span class="tasktext">ペウギ5級：文字・発音の対応確認</span>
+      <span class="mins">7分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-27:typehangul:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-27:typehangul:3">
+      <span class="tasktext">TypeHangul：読みの自動化</span>
+      <span class="mins">5分</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-27" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details>
         <details class="daycard" data-day="2026-08-28" id="day-2026-08-28" >
           <summary>
-            <span><b>Day 11｜08/28（金）</b><small>ハングル基礎</small></span>
-            <span class="daymins">26分</span>
+            <span><b>Day 11｜08/28（金）</b><small>東京教材再開</small></span>
+            <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
-            <div><b>🧠 単語帳500</b><span>085〜092</span></div>
-            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+            <div><b>📘 学習テーマ</b><span>できる韓国語：基本母音・子音の続き</span></div>
+            <div><b>🧠 単語帳500</b><span>075〜082</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
           <div class="tasklist">
-    <label class="taskline" data-task-row="2026-08-28:typehangul:0">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-28:typehangul:0">
-      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+    <label class="taskline" data-task-row="2026-08-28:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-28:vocab:0">
+      <span class="tasktext">単語帳500：新出 075〜082＋前日復習</span>
       <span class="mins">8分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-28:vocab:1">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-28:vocab:1">
-      <span class="tasktext">単語帳500：新出 085〜092＋前日復習</span>
-      <span class="mins">8分</span>
-    </label>
-    <label class="taskline" data-task-row="2026-08-28:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-28:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
+    <label class="taskline" data-task-row="2026-08-28:dekiru:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-28:dekiru:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門（基本母音・基本子音の続き）</span>
       <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-28:peugi:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-28:peugi:2">
+      <span class="tasktext">ペウギ5級：パッチム前の確認</span>
+      <span class="mins">7分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-28:typehangul:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-28:typehangul:3">
+      <span class="tasktext">TypeHangul：読みの自動化</span>
+      <span class="mins">5分</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-28" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details>
         <details class="daycard" data-day="2026-08-29" id="day-2026-08-29" >
           <summary>
-            <span><b>Day 12｜08/29（土）</b><small>ハングル基礎</small></span>
-            <span class="daymins">26分</span>
+            <span><b>Day 12｜08/29（土）</b><small>東京教材再開</small></span>
+            <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
-            <div><b>🧠 単語帳500</b><span>093〜100</span></div>
-            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+            <div><b>📘 学習テーマ</b><span>できる韓国語：合成母音・パッチムへ</span></div>
+            <div><b>🧠 単語帳500</b><span>083〜090</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
           <div class="tasklist">
-    <label class="taskline" data-task-row="2026-08-29:typehangul:0">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-29:typehangul:0">
-      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+    <label class="taskline" data-task-row="2026-08-29:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-29:vocab:0">
+      <span class="tasktext">単語帳500：新出 083〜090＋前日復習</span>
       <span class="mins">8分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-29:vocab:1">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-29:vocab:1">
-      <span class="tasktext">単語帳500：新出 093〜100＋前日復習</span>
-      <span class="mins">8分</span>
-    </label>
-    <label class="taskline" data-task-row="2026-08-29:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-29:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
+    <label class="taskline" data-task-row="2026-08-29:dekiru:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-29:dekiru:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：合成母音・パッチム</span>
       <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-29:peugi:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-29:peugi:2">
+      <span class="tasktext">ペウギ5級：『っ・ん』／パッチム確認</span>
+      <span class="mins">7分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-29:typehangul:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-29:typehangul:3">
+      <span class="tasktext">TypeHangul：パッチムの読み分け</span>
+      <span class="mins">5分</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-29" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details>
         <details class="daycard" data-day="2026-08-30" id="day-2026-08-30" >
           <summary>
-            <span><b>Day 13｜08/30（日）</b><small>ハングル基礎</small></span>
-            <span class="daymins">26分</span>
+            <span><b>Day 13｜08/30（日）</b><small>東京教材再開</small></span>
+            <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
-            <div><b>🧠 単語帳500</b><span>101〜108</span></div>
-            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+            <div><b>📘 学習テーマ</b><span>できる韓国語：文字・発音を仕上げる</span></div>
+            <div><b>🧠 単語帳500</b><span>091〜098</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
           <div class="tasklist">
-    <label class="taskline" data-task-row="2026-08-30:typehangul:0">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-30:typehangul:0">
-      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+    <label class="taskline" data-task-row="2026-08-30:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-30:vocab:0">
+      <span class="tasktext">単語帳500：新出 091〜098＋前日復習</span>
       <span class="mins">8分</span>
     </label>
-    <label class="taskline" data-task-row="2026-08-30:vocab:1">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-30:vocab:1">
-      <span class="tasktext">単語帳500：新出 101〜108＋前日復習</span>
-      <span class="mins">8分</span>
-    </label>
-    <label class="taskline" data-task-row="2026-08-30:core:2">
-      <input type="checkbox" class="taskcheck" data-task="2026-08-30:core:2">
-      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
+    <label class="taskline" data-task-row="2026-08-30:dekiru:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-30:dekiru:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：文字・発音の総仕上げ</span>
       <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-30:peugi:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-30:peugi:2">
+      <span class="tasktext">ペウギ5級：文字・発音の総確認</span>
+      <span class="mins">7分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-30:typehangul:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-30:typehangul:3">
+      <span class="tasktext">TypeHangul：文字の最終確認</span>
+      <span class="mins">5分</span>
     </label></div>
           <textarea class="memo" data-note="2026-08-30" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details></div>
@@ -471,7 +511,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第1課：저는 일본 사람입니다</span></div>
+            <div><b>📘 学習テーマ</b><span>第1課：저는 일본 사람입니다</span></div>
             <div><b>🧠 単語帳500</b><span>109〜116</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -504,7 +544,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第1課：저는 일본 사람입니다</span></div>
+            <div><b>📘 学習テーマ</b><span>第1課：저는 일본 사람입니다</span></div>
             <div><b>🧠 単語帳500</b><span>117〜124</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -537,7 +577,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第2課：일본 사람이 아닙니다</span></div>
+            <div><b>📘 学習テーマ</b><span>第2課：일본 사람이 아닙니다</span></div>
             <div><b>🧠 単語帳500</b><span>125〜132</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -570,7 +610,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第2課：일본 사람이 아닙니다</span></div>
+            <div><b>📘 学習テーマ</b><span>第2課：일본 사람이 아닙니다</span></div>
             <div><b>🧠 単語帳500</b><span>133〜140</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -603,7 +643,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第3課：그건 뭐예요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第3課：그건 뭐예요?</span></div>
             <div><b>🧠 単語帳500</b><span>141〜148</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -636,7 +676,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第3課：그건 뭐예요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第3課：그건 뭐예요?</span></div>
             <div><b>🧠 単語帳500</b><span>149〜156</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -669,7 +709,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第1〜3課 復習</span></div>
+            <div><b>📘 学習テーマ</b><span>第1〜3課 復習</span></div>
             <div><b>🧠 単語帳500</b><span>157〜164</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -709,7 +749,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第4課：약속이 있습니다</span></div>
+            <div><b>📘 学習テーマ</b><span>第4課：약속이 있습니다</span></div>
             <div><b>🧠 単語帳500</b><span>165〜172</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -742,7 +782,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第4課：약속이 있습니다</span></div>
+            <div><b>📘 学習テーマ</b><span>第4課：약속이 있습니다</span></div>
             <div><b>🧠 単語帳500</b><span>173〜180</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -775,7 +815,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第5課：회사는 어디에 있어요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第5課：회사는 어디에 있어요?</span></div>
             <div><b>🧠 単語帳500</b><span>181〜188</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -808,7 +848,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第5課：회사는 어디에 있어요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第5課：회사는 어디에 있어요?</span></div>
             <div><b>🧠 単語帳500</b><span>189〜196</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -841,7 +881,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第6課：주말에는 뭐 합니까?</span></div>
+            <div><b>📘 学習テーマ</b><span>第6課：주말에는 뭐 합니까?</span></div>
             <div><b>🧠 単語帳500</b><span>197〜204</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -874,7 +914,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第6課：주말에는 뭐 합니까?</span></div>
+            <div><b>📘 学習テーマ</b><span>第6課：주말에는 뭐 합니까?</span></div>
             <div><b>🧠 単語帳500</b><span>205〜212</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -907,7 +947,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第4〜6課 復習</span></div>
+            <div><b>📘 学習テーマ</b><span>第4〜6課 復習</span></div>
             <div><b>🧠 単語帳500</b><span>213〜220</span></div>
             <div><b>⌨️ TypeHangul</b><span>5分</span></div>
           </div>
@@ -947,7 +987,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第7課：그렇게 멀지 않습니다</span></div>
+            <div><b>📘 学習テーマ</b><span>第7課：그렇게 멀지 않습니다</span></div>
             <div><b>🧠 単語帳500</b><span>221〜228</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -980,7 +1020,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第7課：그렇게 멀지 않습니다</span></div>
+            <div><b>📘 学習テーマ</b><span>第7課：그렇게 멀지 않습니다</span></div>
             <div><b>🧠 単語帳500</b><span>229〜236</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1013,7 +1053,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第8課：언제 갑니까?</span></div>
+            <div><b>📘 学習テーマ</b><span>第8課：언제 갑니까?</span></div>
             <div><b>🧠 単語帳500</b><span>237〜244</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1046,7 +1086,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第8課：언제 갑니까?</span></div>
+            <div><b>📘 学習テーマ</b><span>第8課：언제 갑니까?</span></div>
             <div><b>🧠 単語帳500</b><span>245〜252</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1079,7 +1119,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第9課：부산까지 어떻게 가요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第9課：부산까지 어떻게 가요?</span></div>
             <div><b>🧠 単語帳500</b><span>253〜260</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1112,7 +1152,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第9課：부산까지 어떻게 가요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第9課：부산까지 어떻게 가요?</span></div>
             <div><b>🧠 単語帳500</b><span>261〜268</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1145,7 +1185,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第7〜9課 復習</span></div>
+            <div><b>📘 学習テーマ</b><span>第7〜9課 復習</span></div>
             <div><b>🧠 単語帳500</b><span>269〜276</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1185,7 +1225,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第10課：몇 시부터예요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第10課：몇 시부터예요?</span></div>
             <div><b>🧠 単語帳500</b><span>277〜284</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1218,7 +1258,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第10課：몇 시부터예요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第10課：몇 시부터예요?</span></div>
             <div><b>🧠 単語帳500</b><span>285〜292</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1251,7 +1291,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第1〜5課 総復習</span></div>
+            <div><b>📘 学習テーマ</b><span>第1〜5課 総復習</span></div>
             <div><b>🧠 単語帳500</b><span>293〜300</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1284,7 +1324,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第6〜10課 総復習</span></div>
+            <div><b>📘 学習テーマ</b><span>第6〜10課 総復習</span></div>
             <div><b>🧠 単語帳500</b><span>301〜308</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1317,7 +1357,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>合格トウミ：5級の助詞・語尾を照合</span></div>
+            <div><b>📘 学習テーマ</b><span>合格トウミ：5級の助詞・語尾を照合</span></div>
             <div><b>🧠 単語帳500</b><span>309〜316</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1350,7 +1390,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>数詞・時刻・曜日・人数を総整理</span></div>
+            <div><b>📘 学習テーマ</b><span>数詞・時刻・曜日・人数を総整理</span></div>
             <div><b>🧠 単語帳500</b><span>317〜324</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1383,7 +1423,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">26分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第1〜10課 確認</span></div>
+            <div><b>📘 学習テーマ</b><span>第1〜10課 確認</span></div>
             <div><b>🧠 単語帳500</b><span>325〜332</span></div>
             <div><b>⌨️ TypeHangul</b><span>3分</span></div>
           </div>
@@ -1423,7 +1463,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>📘 学習テーマ</b><span>慶應科目試験優先：新規文法なし</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1461,7 +1501,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>📘 学習テーマ</b><span>慶應科目試験優先：新規文法なし</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1499,7 +1539,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>📘 学習テーマ</b><span>慶應科目試験優先：新規文法なし</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1537,7 +1577,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>📘 学習テーマ</b><span>慶應科目試験優先：新規文法なし</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1575,7 +1615,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>📘 学習テーマ</b><span>慶應科目試験優先：新規文法なし</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1613,7 +1653,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>📘 学習テーマ</b><span>慶應科目試験優先：新規文法なし</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1651,7 +1691,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>📘 学習テーマ</b><span>慶應科目試験優先：新規文法なし</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1696,7 +1736,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第11課：언제 일본에 왔어요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第11課：언제 일본에 왔어요?</span></div>
             <div><b>🧠 単語帳500</b><span>333〜340</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1729,7 +1769,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第11課：언제 일본에 왔어요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第11課：언제 일본에 왔어요?</span></div>
             <div><b>🧠 単語帳500</b><span>341〜348</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1762,7 +1802,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第12課：성함이 어떻게 되세요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第12課：성함이 어떻게 되세요?</span></div>
             <div><b>🧠 単語帳500</b><span>349〜356</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1795,7 +1835,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第12課：성함이 어떻게 되세요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第12課：성함이 어떻게 되세요?</span></div>
             <div><b>🧠 単語帳500</b><span>357〜364</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1828,7 +1868,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第13課：어디에 다녀 오셨어요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第13課：어디에 다녀 오셨어요?</span></div>
             <div><b>🧠 単語帳500</b><span>365〜372</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1861,7 +1901,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第13課：어디에 다녀 오셨어요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第13課：어디에 다녀 오셨어요?</span></div>
             <div><b>🧠 単語帳500</b><span>373〜380</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1894,7 +1934,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第11〜13課 復習</span></div>
+            <div><b>📘 学習テーマ</b><span>第11〜13課 復習</span></div>
             <div><b>🧠 単語帳500</b><span>381〜388</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1934,7 +1974,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第14課：한국과 일본은 비슷하지만 많이 다르지요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第14課：한국과 일본은 비슷하지만 많이 다르지요?</span></div>
             <div><b>🧠 単語帳500</b><span>389〜396</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1962,7 +2002,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第14課：한국과 일본은 비슷하지만 많이 다르지요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第14課：한국과 일본은 비슷하지만 많이 다르지요?</span></div>
             <div><b>🧠 単語帳500</b><span>397〜404</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -1990,7 +2030,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第15課：온천에 가고 싶어요</span></div>
+            <div><b>📘 学習テーマ</b><span>第15課：온천에 가고 싶어요</span></div>
             <div><b>🧠 単語帳500</b><span>405〜412</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2018,7 +2058,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第15課：온천에 가고 싶어요</span></div>
+            <div><b>📘 学習テーマ</b><span>第15課：온천에 가고 싶어요</span></div>
             <div><b>🧠 単語帳500</b><span>413〜420</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2046,7 +2086,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第16課：선물을 사서 돈을 많이 써요</span></div>
+            <div><b>📘 学習テーマ</b><span>第16課：선물을 사서 돈을 많이 써요</span></div>
             <div><b>🧠 単語帳500</b><span>421〜428</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2074,7 +2114,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第16課：선물을 사서 돈을 많이 써요</span></div>
+            <div><b>📘 学習テーマ</b><span>第16課：선물을 사서 돈을 많이 써요</span></div>
             <div><b>🧠 単語帳500</b><span>429〜436</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2102,7 +2142,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第14〜16課 復習</span></div>
+            <div><b>📘 学習テーマ</b><span>第14〜16課 復習</span></div>
             <div><b>🧠 単語帳500</b><span>437〜444</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2137,7 +2177,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">23分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第17課：결혼식에 뭘 입고 가면 돼요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第17課：결혼식에 뭘 입고 가면 돼요?</span></div>
             <div><b>🧠 単語帳500</b><span>445〜452</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2165,7 +2205,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">23分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第17課：결혼식에 뭘 입고 가면 돼요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第17課：결혼식에 뭘 입고 가면 돼요?</span></div>
             <div><b>🧠 単語帳500</b><span>453〜460</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2193,7 +2233,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">23分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第18課：식사라도 같이 할까요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第18課：식사라도 같이 할까요?</span></div>
             <div><b>🧠 単語帳500</b><span>461〜468</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2221,7 +2261,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">23分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第18課：식사라도 같이 할까요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第18課：식사라도 같이 할까요?</span></div>
             <div><b>🧠 単語帳500</b><span>469〜476</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2249,7 +2289,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">23分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第19課：사진 좀 찍어 주시겠어요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第19課：사진 좀 찍어 주시겠어요?</span></div>
             <div><b>🧠 単語帳500</b><span>477〜484</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2277,7 +2317,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第20課：자전거를 탈 수 있어요?</span></div>
+            <div><b>📘 学習テーマ</b><span>第20課：자전거를 탈 수 있어요?</span></div>
             <div><b>🧠 単語帳500</b><span>485〜492</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2310,7 +2350,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第11〜20課 総復習</span></div>
+            <div><b>📘 学習テーマ</b><span>第11〜20課 総復習</span></div>
             <div><b>🧠 単語帳500</b><span>493〜500</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2350,7 +2390,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>📘 学習テーマ</b><span>第58回＋誤答分析</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2373,7 +2413,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>📘 学習テーマ</b><span>第58回＋誤答分析</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2396,7 +2436,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>📘 学習テーマ</b><span>第58回＋誤答分析</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2419,7 +2459,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>📘 学習テーマ</b><span>第58回＋誤答分析</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2442,7 +2482,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>📘 学習テーマ</b><span>第58回＋誤答分析</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2465,7 +2505,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>📘 学習テーマ</b><span>第58回＋誤答分析</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2488,7 +2528,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">25分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>📘 学習テーマ</b><span>第58回＋誤答分析</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2518,7 +2558,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>最終総復習</span></div>
+            <div><b>📘 学習テーマ</b><span>最終総復習</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2551,7 +2591,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>最終総復習</span></div>
+            <div><b>📘 学習テーマ</b><span>最終総復習</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2584,7 +2624,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>最終総復習</span></div>
+            <div><b>📘 学習テーマ</b><span>最終総復習</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2617,7 +2657,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>最終総復習</span></div>
+            <div><b>📘 学習テーマ</b><span>最終総復習</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2650,7 +2690,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>最終総復習</span></div>
+            <div><b>📘 学習テーマ</b><span>最終総復習</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2683,7 +2723,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">30分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>最終総復習</span></div>
+            <div><b>📘 学習テーマ</b><span>最終総復習</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2716,7 +2756,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
             <span class="daymins">28分</span>
           </summary>
           <div class="facts">
-            <div><b>📘 できる韓国語</b><span>ハン検5級 本番</span></div>
+            <div><b>📘 学習テーマ</b><span>ハン検5級 本番</span></div>
             <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
             <div><b>⌨️ TypeHangul</b><span>なし</span></div>
           </div>
@@ -2753,7 +2793,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
 
 <script>
 (function(){
-  const STORAGE_KEY="hangeul5_daily_wbs_2026_v3";
+  const STORAGE_KEY="hangeul5_daily_wbs_2026_v5";
   let mem={tasks:{},notes:{}};
   function load(){
     try{ const x=localStorage.getItem(STORAGE_KEY); if(x) mem=JSON.parse(x); }catch(e){}
