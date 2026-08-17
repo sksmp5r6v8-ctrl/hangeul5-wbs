@@ -1,0 +1,2808 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<title>ハン検5級 Daily WBS 2026</title>
+<style>
+:root{--bg:#f4f6f8;--card:#fff;--ink:#15181d;--muted:#68707e;--line:#e1e5ea;--nav:#101827;--green:#edf8f1;--warn:#fff7df;--red:#fff0f0}
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic",sans-serif;background:var(--bg);color:var(--ink)}
+header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.wrap{max-width:1160px;margin:auto;padding:14px 16px} h1{font-size:22px;margin:0 0 4px} .sub{font-size:12px;color:var(--muted)}
+.notice{background:var(--warn);border:1px solid #ead9a6;border-radius:14px;padding:11px 13px;font-size:12px;line-height:1.6;margin-bottom:12px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:12px} .kpi{background:#fff;border:1px solid var(--line);border-radius:15px;padding:12px}
+.kpi b{display:block;font-size:20px} .kpi span{font-size:11px;color:var(--muted)} .bar{height:8px;border-radius:999px;background:#e7e9ee;overflow:hidden;margin-top:8px} .bar i{display:block;width:0;height:100%;background:var(--nav)}
+.today{background:var(--nav);color:#fff;border-radius:18px;padding:15px;margin-bottom:12px} .today h2{font-size:17px;margin:0} .today .meta{font-size:12px;color:#cbd5e1;margin:3px 0 10px}
+.todaygrid{display:grid;grid-template-columns:1.2fr .8fr;gap:10px} .todaybox{background:rgba(255,255,255,.08);border-radius:13px;padding:10px}
+.todaytask,.taskline{display:grid;grid-template-columns:24px 1fr auto;gap:8px;align-items:start;padding:8px 0;border-top:1px solid rgba(255,255,255,.12)} .todaytask:first-child{border-top:0}
+.taskline{border-top:1px solid var(--line)} .taskline:first-child{border-top:0} .taskcheck{width:19px;height:19px;margin:1px 0 0} .tasktext{font-size:12px;font-weight:650;line-height:1.45} .mins{font-size:11px;color:#9ca3af}
+.taskcheck:checked + .tasktext{text-decoration:line-through;opacity:.5}
+.todayfacts{display:grid;gap:8px} .todayfact{background:rgba(255,255,255,.08);border-radius:12px;padding:9px} .todayfact b{font-size:12px;display:block} .todayfact span{font-size:12px;color:#cbd5e1;display:block;margin-top:3px}
+.controls{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 14px} button,select{background:white;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px} button.primary{background:var(--nav);color:white;border-color:var(--nav)}
+.week{margin:16px 0 22px;scroll-margin-top:80px} .weektitle{display:flex;justify-content:space-between;align-items:end;margin:0 2px 8px} .weektitle h3{font-size:15px;margin:0} .weektitle span{font-size:11px;color:var(--muted)}
+.daygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.daycard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden} .daycard.current{outline:2px solid var(--nav)} .daycard.exam{background:var(--red)}
+.daycard summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:8px;padding:10px} .daycard summary::-webkit-details-marker{display:none} .daycard summary b{font-size:12.5px} .daycard summary small{display:block;color:var(--muted);font-size:10px;margin-top:2px} .daymins{font-size:11px;color:var(--muted);white-space:nowrap}
+.facts{display:grid;grid-template-columns:1fr;gap:5px;padding:0 10px 8px} .facts div{background:#f7f8fa;border-radius:9px;padding:7px} .facts b{display:block;font-size:10px;color:var(--muted)} .facts span{display:block;font-size:11px;margin-top:2px;line-height:1.35}
+.tasklist{padding:0 10px} .memo{margin:7px 10px 10px;width:calc(100% - 20px);min-height:56px;border:1px solid var(--line);border-radius:9px;padding:8px;font:inherit;font-size:12px}
+.previewhelp{font-size:11px;color:var(--muted);margin:8px 0 0}
+.hidden{display:none!important}
+@media(max-width:800px){.kpis{grid-template-columns:repeat(2,1fr)}.todaygrid{grid-template-columns:1fr}.daygrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.daygrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>🇰🇷 ハン検5級 Daily WBS</h1><div class="sub">2026/8/18 → 11/8 ｜ 毎日20〜30分 ｜ 単語500＋TypeHangul＋できる韓国語＋2023年版過去問</div></div></header>
+<main class="wrap">
+<div class="notice"><b>修正版：</b>タスク本文をHTMLに直接埋め込みました。JavaScriptが止まっても日別タスクは表示されます。チェック保存・フィルターはブラウザ機能が使える場合に動作します。なお8/18〜11/8は両日を含めて83日です。</div>
+<section class="kpis">
+ <div class="kpi"><b>82日</b><span>8/18時点で本番まで</span></div>
+ <div class="kpi"><b id="doneDays">0 / 83</b><span>完了した日</span></div>
+ <div class="kpi"><b id="pct">0%</b><span>全体進捗</span><div class="bar"><i id="progress"></i></div></div>
+ <div class="kpi"><b>001〜009</b><span>今日の新出単語</span></div>
+</section>
+
+<section class="today" id="today">
+ <h2>今日の学習｜8/18（火）</h2>
+ <div class="meta">ハングル基礎 ・ 合計 28分</div>
+ <div class="todaygrid">
+   <div class="todaybox">
+    <label class="todaytask" data-task-row="2026-08-18:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-18:typehangul:0">
+      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="todaytask" data-task-row="2026-08-18:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-18:vocab:1">
+      <span class="tasktext">単語帳500：新出 001〜009＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="todaytask" data-task-row="2026-08-18:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-18:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
+      <span class="mins">10分</span>
+    </label></div>
+   <div class="todayfacts">
+     <div class="todayfact"><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
+     <div class="todayfact"><b>🧠 単語帳500</b><span>新出 001〜009</span></div>
+     <div class="todayfact"><b>⌨️ TypeHangul</b><span>10分</span></div>
+   </div>
+ </div>
+</section>
+
+<div class="controls">
+ <button class="primary" id="todayBtn" type="button">今日へ</button>
+ <select id="weekFilter"><option value="">全Week</option><option value="1">Week 1</option><option value="2">Week 2</option><option value="3">Week 3</option><option value="4">Week 4</option><option value="5">Week 5</option><option value="6">Week 6</option><option value="7">Week 7</option><option value="8">Week 8</option><option value="9">Week 9</option><option value="10">Week 10</option><option value="11">Week 11</option><option value="12">Week 12</option></select>
+ <select id="statusFilter"><option value="">全状態</option><option value="open">未完了</option><option value="done">完了</option></select>
+ <button id="clearBtn" type="button">チェックを全解除</button>
+</div>
+<div class="previewhelp">※ この上のボタンすら反応しない場合は、iPhoneの「ファイルプレビュー」でJavaScriptが無効になっています。その場合でも下の日別タスクは読めます。ブラウザで開くと保存・絞り込みが使えます。</div>
+
+
+    <section class="week" data-week="1">
+      <div class="weektitle">
+        <h3>Week 1</h3>
+        <span>08/18〜08/23</span>
+      </div>
+      <div class="daygrid">
+        <details class="daycard current" data-day="2026-08-18" id="day-2026-08-18" open>
+          <summary>
+            <span><b>Day 1｜08/18（火）</b><small>ハングル基礎</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
+            <div><b>🧠 単語帳500</b><span>001〜009</span></div>
+            <div><b>⌨️ TypeHangul</b><span>10分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-18:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-18:typehangul:0">
+      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-18:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-18:vocab:1">
+      <span class="tasktext">単語帳500：新出 001〜009＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-18:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-18:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-18" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-08-19" id="day-2026-08-19" >
+          <summary>
+            <span><b>Day 2｜08/19（水）</b><small>ハングル基礎</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
+            <div><b>🧠 単語帳500</b><span>010〜018</span></div>
+            <div><b>⌨️ TypeHangul</b><span>10分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-19:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-19:typehangul:0">
+      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-19:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-19:vocab:1">
+      <span class="tasktext">単語帳500：新出 010〜018＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-19:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-19:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-19" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-08-20" id="day-2026-08-20" >
+          <summary>
+            <span><b>Day 3｜08/20（木）</b><small>ハングル基礎</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
+            <div><b>🧠 単語帳500</b><span>019〜027</span></div>
+            <div><b>⌨️ TypeHangul</b><span>10分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-20:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-20:typehangul:0">
+      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-20:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-20:vocab:1">
+      <span class="tasktext">単語帳500：新出 019〜027＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-20:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-20:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-20" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-08-21" id="day-2026-08-21" >
+          <summary>
+            <span><b>Day 4｜08/21（金）</b><small>ハングル基礎</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
+            <div><b>🧠 単語帳500</b><span>028〜036</span></div>
+            <div><b>⌨️ TypeHangul</b><span>10分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-21:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-21:typehangul:0">
+      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-21:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-21:vocab:1">
+      <span class="tasktext">単語帳500：新出 028〜036＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-21:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-21:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-21" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-08-22" id="day-2026-08-22" >
+          <summary>
+            <span><b>Day 5｜08/22（土）</b><small>ハングル基礎</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
+            <div><b>🧠 単語帳500</b><span>037〜044</span></div>
+            <div><b>⌨️ TypeHangul</b><span>10分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-22:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-22:typehangul:0">
+      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-22:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-22:vocab:1">
+      <span class="tasktext">単語帳500：新出 037〜044＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-22:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-22:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-22" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-08-23" id="day-2026-08-23" >
+          <summary>
+            <span><b>Day 6｜08/23（日）</b><small>ハングル基礎</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：基本母音・基本子音</span></div>
+            <div><b>🧠 単語帳500</b><span>045〜052</span></div>
+            <div><b>⌨️ TypeHangul</b><span>10分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-23:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-23:typehangul:0">
+      <span class="tasktext">TypeHangul：基本母音・子音の打鍵</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-23:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-23:vocab:1">
+      <span class="tasktext">単語帳500：新出 045〜052＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-23:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-23:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：基本母音・基本子音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-23" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details></div>
+    </section>
+    <section class="week" data-week="2">
+      <div class="weektitle">
+        <h3>Week 2</h3>
+        <span>08/24〜08/30</span>
+      </div>
+      <div class="daygrid">
+        <details class="daycard" data-day="2026-08-24" id="day-2026-08-24" >
+          <summary>
+            <span><b>Day 7｜08/24（月）</b><small>ハングル基礎</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
+            <div><b>🧠 単語帳500</b><span>053〜060</span></div>
+            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-24:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-24:typehangul:0">
+      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-24:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-24:vocab:1">
+      <span class="tasktext">単語帳500：新出 053〜060＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-24:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-24:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-24" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-08-25" id="day-2026-08-25" >
+          <summary>
+            <span><b>Day 8｜08/25（火）</b><small>ハングル基礎</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
+            <div><b>🧠 単語帳500</b><span>061〜068</span></div>
+            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-25:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-25:typehangul:0">
+      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-25:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-25:vocab:1">
+      <span class="tasktext">単語帳500：新出 061〜068＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-25:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-25:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-25" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-08-26" id="day-2026-08-26" >
+          <summary>
+            <span><b>Day 9｜08/26（水）</b><small>ハングル基礎</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
+            <div><b>🧠 単語帳500</b><span>069〜076</span></div>
+            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-26:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-26:typehangul:0">
+      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-26:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-26:vocab:1">
+      <span class="tasktext">単語帳500：新出 069〜076＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-26:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-26:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-26" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-08-27" id="day-2026-08-27" >
+          <summary>
+            <span><b>Day 10｜08/27（木）</b><small>ハングル基礎</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
+            <div><b>🧠 単語帳500</b><span>077〜084</span></div>
+            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-27:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-27:typehangul:0">
+      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-27:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-27:vocab:1">
+      <span class="tasktext">単語帳500：新出 077〜084＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-27:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-27:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-27" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-08-28" id="day-2026-08-28" >
+          <summary>
+            <span><b>Day 11｜08/28（金）</b><small>ハングル基礎</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
+            <div><b>🧠 単語帳500</b><span>085〜092</span></div>
+            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-28:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-28:typehangul:0">
+      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-28:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-28:vocab:1">
+      <span class="tasktext">単語帳500：新出 085〜092＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-28:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-28:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-28" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-08-29" id="day-2026-08-29" >
+          <summary>
+            <span><b>Day 12｜08/29（土）</b><small>ハングル基礎</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
+            <div><b>🧠 単語帳500</b><span>093〜100</span></div>
+            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-29:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-29:typehangul:0">
+      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-29:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-29:vocab:1">
+      <span class="tasktext">単語帳500：新出 093〜100＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-29:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-29:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-29" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-08-30" id="day-2026-08-30" >
+          <summary>
+            <span><b>Day 13｜08/30（日）</b><small>ハングル基礎</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>入門：パッチム・合成母音・濃音/激音</span></div>
+            <div><b>🧠 単語帳500</b><span>101〜108</span></div>
+            <div><b>⌨️ TypeHangul</b><span>8分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-30:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-30:typehangul:0">
+      <span class="tasktext">TypeHangul：パッチムまで反射的に読む</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-30:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-30:vocab:1">
+      <span class="tasktext">単語帳500：新出 101〜108＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-30:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-30:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：入門：パッチム・合成母音・濃音/激音</span>
+      <span class="mins">10分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-30" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details></div>
+    </section>
+    <section class="week" data-week="3">
+      <div class="weektitle">
+        <h3>Week 3</h3>
+        <span>08/31〜09/06</span>
+      </div>
+      <div class="daygrid">
+        <details class="daycard" data-day="2026-08-31" id="day-2026-08-31" >
+          <summary>
+            <span><b>Day 14｜08/31（月）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第1課：저는 일본 사람입니다</span></div>
+            <div><b>🧠 単語帳500</b><span>109〜116</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-08-31:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-31:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-31:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-31:vocab:1">
+      <span class="tasktext">単語帳500：新出 109〜116＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-31:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-31:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第1課：저는 일본 사람입니다</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-08-31:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-08-31:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-08-31" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-01" id="day-2026-09-01" >
+          <summary>
+            <span><b>Day 15｜09/01（火）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第1課：저는 일본 사람입니다</span></div>
+            <div><b>🧠 単語帳500</b><span>117〜124</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-01:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-01:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-01:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-01:vocab:1">
+      <span class="tasktext">単語帳500：新出 117〜124＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-01:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-01:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第1課：저는 일본 사람입니다</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-01:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-01:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-01" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-02" id="day-2026-09-02" >
+          <summary>
+            <span><b>Day 16｜09/02（水）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第2課：일본 사람이 아닙니다</span></div>
+            <div><b>🧠 単語帳500</b><span>125〜132</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-02:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-02:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-02:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-02:vocab:1">
+      <span class="tasktext">単語帳500：新出 125〜132＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-02:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-02:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第2課：일본 사람이 아닙니다</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-02:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-02:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-02" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-03" id="day-2026-09-03" >
+          <summary>
+            <span><b>Day 17｜09/03（木）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第2課：일본 사람이 아닙니다</span></div>
+            <div><b>🧠 単語帳500</b><span>133〜140</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-03:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-03:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-03:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-03:vocab:1">
+      <span class="tasktext">単語帳500：新出 133〜140＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-03:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-03:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第2課：일본 사람이 아닙니다</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-03:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-03:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-03" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-04" id="day-2026-09-04" >
+          <summary>
+            <span><b>Day 18｜09/04（金）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第3課：그건 뭐예요?</span></div>
+            <div><b>🧠 単語帳500</b><span>141〜148</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-04:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-04:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-04:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-04:vocab:1">
+      <span class="tasktext">単語帳500：新出 141〜148＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-04:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-04:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第3課：그건 뭐예요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-04:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-04:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-04" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-05" id="day-2026-09-05" >
+          <summary>
+            <span><b>Day 19｜09/05（土）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第3課：그건 뭐예요?</span></div>
+            <div><b>🧠 単語帳500</b><span>149〜156</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-05:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-05:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-05:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-05:vocab:1">
+      <span class="tasktext">単語帳500：新出 149〜156＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-05:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-05:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第3課：그건 뭐예요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-05:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-05:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-05" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-06" id="day-2026-09-06" >
+          <summary>
+            <span><b>Day 20｜09/06（日）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第1〜3課 復習</span></div>
+            <div><b>🧠 単語帳500</b><span>157〜164</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-06:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-06:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-06:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-06:vocab:1">
+      <span class="tasktext">単語帳500：新出 157〜164＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-06:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-06:core:2">
+      <span class="tasktext">でき韓／合格トウミ：第1〜3課 復習</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-06:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-06:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-06" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details></div>
+    </section>
+    <section class="week" data-week="4">
+      <div class="weektitle">
+        <h3>Week 4</h3>
+        <span>09/07〜09/13</span>
+      </div>
+      <div class="daygrid">
+        <details class="daycard" data-day="2026-09-07" id="day-2026-09-07" >
+          <summary>
+            <span><b>Day 21｜09/07（月）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第4課：약속이 있습니다</span></div>
+            <div><b>🧠 単語帳500</b><span>165〜172</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-07:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-07:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-07:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-07:vocab:1">
+      <span class="tasktext">単語帳500：新出 165〜172＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-07:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-07:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第4課：약속이 있습니다</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-07:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-07:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-07" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-08" id="day-2026-09-08" >
+          <summary>
+            <span><b>Day 22｜09/08（火）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第4課：약속이 있습니다</span></div>
+            <div><b>🧠 単語帳500</b><span>173〜180</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-08:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-08:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-08:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-08:vocab:1">
+      <span class="tasktext">単語帳500：新出 173〜180＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-08:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-08:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第4課：약속이 있습니다</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-08:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-08:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-08" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-09" id="day-2026-09-09" >
+          <summary>
+            <span><b>Day 23｜09/09（水）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第5課：회사는 어디에 있어요?</span></div>
+            <div><b>🧠 単語帳500</b><span>181〜188</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-09:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-09:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-09:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-09:vocab:1">
+      <span class="tasktext">単語帳500：新出 181〜188＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-09:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-09:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第5課：회사는 어디에 있어요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-09:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-09:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-09" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-10" id="day-2026-09-10" >
+          <summary>
+            <span><b>Day 24｜09/10（木）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第5課：회사는 어디에 있어요?</span></div>
+            <div><b>🧠 単語帳500</b><span>189〜196</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-10:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-10:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-10:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-10:vocab:1">
+      <span class="tasktext">単語帳500：新出 189〜196＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-10:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-10:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第5課：회사는 어디에 있어요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-10:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-10:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-10" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-11" id="day-2026-09-11" >
+          <summary>
+            <span><b>Day 25｜09/11（金）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第6課：주말에는 뭐 합니까?</span></div>
+            <div><b>🧠 単語帳500</b><span>197〜204</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-11:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-11:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-11:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-11:vocab:1">
+      <span class="tasktext">単語帳500：新出 197〜204＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-11:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-11:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第6課：주말에는 뭐 합니까?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-11:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-11:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-11" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-12" id="day-2026-09-12" >
+          <summary>
+            <span><b>Day 26｜09/12（土）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第6課：주말에는 뭐 합니까?</span></div>
+            <div><b>🧠 単語帳500</b><span>205〜212</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-12:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-12:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-12:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-12:vocab:1">
+      <span class="tasktext">単語帳500：新出 205〜212＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-12:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-12:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第6課：주말에는 뭐 합니까?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-12:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-12:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-12" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-13" id="day-2026-09-13" >
+          <summary>
+            <span><b>Day 27｜09/13（日）</b><small>文法＋語彙</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第4〜6課 復習</span></div>
+            <div><b>🧠 単語帳500</b><span>213〜220</span></div>
+            <div><b>⌨️ TypeHangul</b><span>5分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-13:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-13:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-13:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-13:vocab:1">
+      <span class="tasktext">単語帳500：新出 213〜220＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-13:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-13:core:2">
+      <span class="tasktext">でき韓／合格トウミ：第4〜6課 復習</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-13:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-13:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-13" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details></div>
+    </section>
+    <section class="week" data-week="5">
+      <div class="weektitle">
+        <h3>Week 5</h3>
+        <span>09/14〜09/20</span>
+      </div>
+      <div class="daygrid">
+        <details class="daycard" data-day="2026-09-14" id="day-2026-09-14" >
+          <summary>
+            <span><b>Day 28｜09/14（月）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第7課：그렇게 멀지 않습니다</span></div>
+            <div><b>🧠 単語帳500</b><span>221〜228</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-14:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-14:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-14:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-14:vocab:1">
+      <span class="tasktext">単語帳500：新出 221〜228＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-14:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-14:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第7課：그렇게 멀지 않습니다</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-14:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-14:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-14" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-15" id="day-2026-09-15" >
+          <summary>
+            <span><b>Day 29｜09/15（火）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第7課：그렇게 멀지 않습니다</span></div>
+            <div><b>🧠 単語帳500</b><span>229〜236</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-15:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-15:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-15:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-15:vocab:1">
+      <span class="tasktext">単語帳500：新出 229〜236＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-15:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-15:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第7課：그렇게 멀지 않습니다</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-15:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-15:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-15" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-16" id="day-2026-09-16" >
+          <summary>
+            <span><b>Day 30｜09/16（水）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第8課：언제 갑니까?</span></div>
+            <div><b>🧠 単語帳500</b><span>237〜244</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-16:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-16:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-16:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-16:vocab:1">
+      <span class="tasktext">単語帳500：新出 237〜244＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-16:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-16:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第8課：언제 갑니까?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-16:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-16:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-16" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-17" id="day-2026-09-17" >
+          <summary>
+            <span><b>Day 31｜09/17（木）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第8課：언제 갑니까?</span></div>
+            <div><b>🧠 単語帳500</b><span>245〜252</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-17:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-17:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-17:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-17:vocab:1">
+      <span class="tasktext">単語帳500：新出 245〜252＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-17:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-17:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第8課：언제 갑니까?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-17:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-17:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-17" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-18" id="day-2026-09-18" >
+          <summary>
+            <span><b>Day 32｜09/18（金）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第9課：부산까지 어떻게 가요?</span></div>
+            <div><b>🧠 単語帳500</b><span>253〜260</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-18:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-18:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-18:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-18:vocab:1">
+      <span class="tasktext">単語帳500：新出 253〜260＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-18:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-18:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第9課：부산까지 어떻게 가요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-18:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-18:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-18" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-19" id="day-2026-09-19" >
+          <summary>
+            <span><b>Day 33｜09/19（土）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第9課：부산까지 어떻게 가요?</span></div>
+            <div><b>🧠 単語帳500</b><span>261〜268</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-19:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-19:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-19:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-19:vocab:1">
+      <span class="tasktext">単語帳500：新出 261〜268＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-19:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-19:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第9課：부산까지 어떻게 가요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-19:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-19:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-19" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-20" id="day-2026-09-20" >
+          <summary>
+            <span><b>Day 34｜09/20（日）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第7〜9課 復習</span></div>
+            <div><b>🧠 単語帳500</b><span>269〜276</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-20:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-20:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-20:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-20:vocab:1">
+      <span class="tasktext">単語帳500：新出 269〜276＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-20:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-20:core:2">
+      <span class="tasktext">でき韓／合格トウミ：第7〜9課 復習</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-20:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-20:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-20" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details></div>
+    </section>
+    <section class="week" data-week="6">
+      <div class="weektitle">
+        <h3>Week 6</h3>
+        <span>09/21〜09/27</span>
+      </div>
+      <div class="daygrid">
+        <details class="daycard" data-day="2026-09-21" id="day-2026-09-21" >
+          <summary>
+            <span><b>Day 35｜09/21（月）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第10課：몇 시부터예요?</span></div>
+            <div><b>🧠 単語帳500</b><span>277〜284</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-21:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-21:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-21:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-21:vocab:1">
+      <span class="tasktext">単語帳500：新出 277〜284＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-21:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-21:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第10課：몇 시부터예요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-21:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-21:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-21" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-22" id="day-2026-09-22" >
+          <summary>
+            <span><b>Day 36｜09/22（火）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第10課：몇 시부터예요?</span></div>
+            <div><b>🧠 単語帳500</b><span>285〜292</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-22:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-22:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-22:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-22:vocab:1">
+      <span class="tasktext">単語帳500：新出 285〜292＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-22:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-22:core:2">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第10課：몇 시부터예요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-22:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-22:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-22" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-23" id="day-2026-09-23" >
+          <summary>
+            <span><b>Day 37｜09/23（水）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第1〜5課 総復習</span></div>
+            <div><b>🧠 単語帳500</b><span>293〜300</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-23:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-23:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-23:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-23:vocab:1">
+      <span class="tasktext">単語帳500：新出 293〜300＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-23:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-23:core:2">
+      <span class="tasktext">でき韓／合格トウミ：第1〜5課 総復習</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-23:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-23:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-23" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-24" id="day-2026-09-24" >
+          <summary>
+            <span><b>Day 38｜09/24（木）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第6〜10課 総復習</span></div>
+            <div><b>🧠 単語帳500</b><span>301〜308</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-24:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-24:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-24:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-24:vocab:1">
+      <span class="tasktext">単語帳500：新出 301〜308＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-24:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-24:core:2">
+      <span class="tasktext">でき韓／合格トウミ：第6〜10課 総復習</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-24:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-24:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-24" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-25" id="day-2026-09-25" >
+          <summary>
+            <span><b>Day 39｜09/25（金）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>合格トウミ：5級の助詞・語尾を照合</span></div>
+            <div><b>🧠 単語帳500</b><span>309〜316</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-25:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-25:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-25:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-25:vocab:1">
+      <span class="tasktext">単語帳500：新出 309〜316＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-25:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-25:core:2">
+      <span class="tasktext">でき韓／合格トウミ：合格トウミ：5級の助詞・語尾を照合</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-25:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-25:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-25" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-26" id="day-2026-09-26" >
+          <summary>
+            <span><b>Day 40｜09/26（土）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>数詞・時刻・曜日・人数を総整理</span></div>
+            <div><b>🧠 単語帳500</b><span>317〜324</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-26:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-26:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-26:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-26:vocab:1">
+      <span class="tasktext">単語帳500：新出 317〜324＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-26:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-26:core:2">
+      <span class="tasktext">でき韓／合格トウミ：数詞・時刻・曜日・人数を総整理</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-26:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-26:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-26" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-27" id="day-2026-09-27" >
+          <summary>
+            <span><b>Day 41｜09/27（日）</b><small>文法＋語彙</small></span>
+            <span class="daymins">26分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第1〜10課 確認</span></div>
+            <div><b>🧠 単語帳500</b><span>325〜332</span></div>
+            <div><b>⌨️ TypeHangul</b><span>3分</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-27:typehangul:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-27:typehangul:0">
+      <span class="tasktext">TypeHangul：読み速度の維持</span>
+      <span class="mins">3分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-27:vocab:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-27:vocab:1">
+      <span class="tasktext">単語帳500：新出 325〜332＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-27:core:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-27:core:2">
+      <span class="tasktext">でき韓／合格トウミ：第1〜10課 確認</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-27:app:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-27:app:3">
+      <span class="tasktext">ハングル検定アプリ：基礎問題</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-27" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details></div>
+    </section>
+    <section class="week" data-week="7">
+      <div class="weektitle">
+        <h3>Week 7</h3>
+        <span>09/28〜10/04</span>
+      </div>
+      <div class="daygrid">
+        <details class="daycard" data-day="2026-09-28" id="day-2026-09-28" >
+          <summary>
+            <span><b>Day 42｜09/28（月）</b><small>科目試験優先</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-28:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-28:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-28:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-28:core:1">
+      <span class="tasktext">でき韓：既習範囲を音読1回（新規なし）</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-28:app:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-28:app:2">
+      <span class="tasktext">ハングル検定アプリ：5問だけ</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-28:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-28:listen:3">
+      <span class="tasktext">聞き取り：既習音声を1本</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-28:review:4">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-28:review:4">
+      <span class="tasktext">合格トウミ：△印だけ確認</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-28" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-29" id="day-2026-09-29" >
+          <summary>
+            <span><b>Day 43｜09/29（火）</b><small>科目試験優先</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-29:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-29:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-29:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-29:core:1">
+      <span class="tasktext">でき韓：既習範囲を音読1回（新規なし）</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-29:app:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-29:app:2">
+      <span class="tasktext">ハングル検定アプリ：5問だけ</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-29:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-29:listen:3">
+      <span class="tasktext">聞き取り：既習音声を1本</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-29:review:4">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-29:review:4">
+      <span class="tasktext">合格トウミ：△印だけ確認</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-29" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-09-30" id="day-2026-09-30" >
+          <summary>
+            <span><b>Day 44｜09/30（水）</b><small>科目試験優先</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-09-30:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-30:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-30:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-30:core:1">
+      <span class="tasktext">でき韓：既習範囲を音読1回（新規なし）</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-30:app:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-30:app:2">
+      <span class="tasktext">ハングル検定アプリ：5問だけ</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-30:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-30:listen:3">
+      <span class="tasktext">聞き取り：既習音声を1本</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-09-30:review:4">
+      <input type="checkbox" class="taskcheck" data-task="2026-09-30:review:4">
+      <span class="tasktext">合格トウミ：△印だけ確認</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-09-30" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-01" id="day-2026-10-01" >
+          <summary>
+            <span><b>Day 45｜10/01（木）</b><small>科目試験優先</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-01:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-01:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-01:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-01:core:1">
+      <span class="tasktext">でき韓：既習範囲を音読1回（新規なし）</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-01:app:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-01:app:2">
+      <span class="tasktext">ハングル検定アプリ：5問だけ</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-01:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-01:listen:3">
+      <span class="tasktext">聞き取り：既習音声を1本</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-01:review:4">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-01:review:4">
+      <span class="tasktext">合格トウミ：△印だけ確認</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-01" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-02" id="day-2026-10-02" >
+          <summary>
+            <span><b>Day 46｜10/02（金）</b><small>科目試験優先</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-02:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-02:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-02:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-02:core:1">
+      <span class="tasktext">でき韓：既習範囲を音読1回（新規なし）</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-02:app:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-02:app:2">
+      <span class="tasktext">ハングル検定アプリ：5問だけ</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-02:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-02:listen:3">
+      <span class="tasktext">聞き取り：既習音声を1本</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-02:review:4">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-02:review:4">
+      <span class="tasktext">合格トウミ：△印だけ確認</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-02" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-03" id="day-2026-10-03" >
+          <summary>
+            <span><b>Day 47｜10/03（土）</b><small>科目試験優先</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-03:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-03:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-03:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-03:core:1">
+      <span class="tasktext">でき韓：既習範囲を音読1回（新規なし）</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-03:app:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-03:app:2">
+      <span class="tasktext">ハングル検定アプリ：5問だけ</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-03:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-03:listen:3">
+      <span class="tasktext">聞き取り：既習音声を1本</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-03:review:4">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-03:review:4">
+      <span class="tasktext">合格トウミ：△印だけ確認</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-03" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-04" id="day-2026-10-04" >
+          <summary>
+            <span><b>Day 48｜10/04（日）</b><small>科目試験優先</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>慶應科目試験優先：新規文法なし</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-04:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-04:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-04:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-04:core:1">
+      <span class="tasktext">でき韓：既習範囲を音読1回（新規なし）</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-04:app:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-04:app:2">
+      <span class="tasktext">ハングル検定アプリ：5問だけ</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-04:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-04:listen:3">
+      <span class="tasktext">聞き取り：既習音声を1本</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-04:review:4">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-04:review:4">
+      <span class="tasktext">合格トウミ：△印だけ確認</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-04" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details></div>
+    </section>
+    <section class="week" data-week="8">
+      <div class="weektitle">
+        <h3>Week 8</h3>
+        <span>10/05〜10/11</span>
+      </div>
+      <div class="daygrid">
+        <details class="daycard" data-day="2026-10-05" id="day-2026-10-05" >
+          <summary>
+            <span><b>Day 49｜10/05（月）</b><small>5級範囲完成</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第11課：언제 일본에 왔어요?</span></div>
+            <div><b>🧠 単語帳500</b><span>333〜340</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-05:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-05:vocab:0">
+      <span class="tasktext">単語帳500：新出 333〜340＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-05:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-05:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第11課：언제 일본에 왔어요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-05:toumi:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-05:toumi:2">
+      <span class="tasktext">合格トウミ：その日の文法・語彙を照合</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-05:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-05:listen:3">
+      <span class="tasktext">聞き取り：5級音声</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-05" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-06" id="day-2026-10-06" >
+          <summary>
+            <span><b>Day 50｜10/06（火）</b><small>5級範囲完成</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第11課：언제 일본에 왔어요?</span></div>
+            <div><b>🧠 単語帳500</b><span>341〜348</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-06:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-06:vocab:0">
+      <span class="tasktext">単語帳500：新出 341〜348＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-06:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-06:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第11課：언제 일본에 왔어요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-06:toumi:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-06:toumi:2">
+      <span class="tasktext">合格トウミ：その日の文法・語彙を照合</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-06:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-06:listen:3">
+      <span class="tasktext">聞き取り：5級音声</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-06" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-07" id="day-2026-10-07" >
+          <summary>
+            <span><b>Day 51｜10/07（水）</b><small>5級範囲完成</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第12課：성함이 어떻게 되세요?</span></div>
+            <div><b>🧠 単語帳500</b><span>349〜356</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-07:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-07:vocab:0">
+      <span class="tasktext">単語帳500：新出 349〜356＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-07:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-07:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第12課：성함이 어떻게 되세요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-07:toumi:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-07:toumi:2">
+      <span class="tasktext">合格トウミ：その日の文法・語彙を照合</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-07:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-07:listen:3">
+      <span class="tasktext">聞き取り：5級音声</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-07" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-08" id="day-2026-10-08" >
+          <summary>
+            <span><b>Day 52｜10/08（木）</b><small>5級範囲完成</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第12課：성함이 어떻게 되세요?</span></div>
+            <div><b>🧠 単語帳500</b><span>357〜364</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-08:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-08:vocab:0">
+      <span class="tasktext">単語帳500：新出 357〜364＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-08:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-08:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第12課：성함이 어떻게 되세요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-08:toumi:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-08:toumi:2">
+      <span class="tasktext">合格トウミ：その日の文法・語彙を照合</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-08:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-08:listen:3">
+      <span class="tasktext">聞き取り：5級音声</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-08" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-09" id="day-2026-10-09" >
+          <summary>
+            <span><b>Day 53｜10/09（金）</b><small>5級範囲完成</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第13課：어디에 다녀 오셨어요?</span></div>
+            <div><b>🧠 単語帳500</b><span>365〜372</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-09:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-09:vocab:0">
+      <span class="tasktext">単語帳500：新出 365〜372＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-09:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-09:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第13課：어디에 다녀 오셨어요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-09:toumi:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-09:toumi:2">
+      <span class="tasktext">合格トウミ：その日の文法・語彙を照合</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-09:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-09:listen:3">
+      <span class="tasktext">聞き取り：5級音声</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-09" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-10" id="day-2026-10-10" >
+          <summary>
+            <span><b>Day 54｜10/10（土）</b><small>5級範囲完成</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第13課：어디에 다녀 오셨어요?</span></div>
+            <div><b>🧠 単語帳500</b><span>373〜380</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-10:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-10:vocab:0">
+      <span class="tasktext">単語帳500：新出 373〜380＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-10:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-10:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第13課：어디에 다녀 오셨어요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-10:toumi:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-10:toumi:2">
+      <span class="tasktext">合格トウミ：その日の文法・語彙を照合</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-10:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-10:listen:3">
+      <span class="tasktext">聞き取り：5級音声</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-10" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-11" id="day-2026-10-11" >
+          <summary>
+            <span><b>Day 55｜10/11（日）</b><small>5級範囲完成</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第11〜13課 復習</span></div>
+            <div><b>🧠 単語帳500</b><span>381〜388</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-11:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-11:vocab:0">
+      <span class="tasktext">単語帳500：新出 381〜388＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-11:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-11:core:1">
+      <span class="tasktext">でき韓／合格トウミ：第11〜13課 復習</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-11:toumi:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-11:toumi:2">
+      <span class="tasktext">合格トウミ：その日の文法・語彙を照合</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-11:listen:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-11:listen:3">
+      <span class="tasktext">聞き取り：5級音声</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-11" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details></div>
+    </section>
+    <section class="week" data-week="9">
+      <div class="weektitle">
+        <h3>Week 9</h3>
+        <span>10/12〜10/18</span>
+      </div>
+      <div class="daygrid">
+        <details class="daycard" data-day="2026-10-12" id="day-2026-10-12" >
+          <summary>
+            <span><b>Day 56｜10/12（月）</b><small>第57回・弱点発見</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第14課：한국과 일본은 비슷하지만 많이 다르지요?</span></div>
+            <div><b>🧠 単語帳500</b><span>389〜396</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-12:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-12:vocab:0">
+      <span class="tasktext">単語帳500：新出 389〜396＋前日復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-12:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-12:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第14課：한국과 일본은 비슷하지만 많이 다르지요?</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-12:mock57:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-12:mock57:2">
+      <span class="tasktext">第57回：聞き取り 前半</span>
+      <span class="mins">15分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-12" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-13" id="day-2026-10-13" >
+          <summary>
+            <span><b>Day 57｜10/13（火）</b><small>第57回・弱点発見</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第14課：한국과 일본은 비슷하지만 많이 다르지요?</span></div>
+            <div><b>🧠 単語帳500</b><span>397〜404</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-13:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-13:vocab:0">
+      <span class="tasktext">単語帳500：新出 397〜404＋前日復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-13:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-13:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第14課：한국과 일본은 비슷하지만 많이 다르지요?</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-13:mock57:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-13:mock57:2">
+      <span class="tasktext">第57回：聞き取り 後半</span>
+      <span class="mins">15分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-13" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-14" id="day-2026-10-14" >
+          <summary>
+            <span><b>Day 58｜10/14（水）</b><small>第57回・弱点発見</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第15課：온천에 가고 싶어요</span></div>
+            <div><b>🧠 単語帳500</b><span>405〜412</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-14:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-14:vocab:0">
+      <span class="tasktext">単語帳500：新出 405〜412＋前日復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-14:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-14:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第15課：온천에 가고 싶어요</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-14:mock57:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-14:mock57:2">
+      <span class="tasktext">第57回：筆記 前半</span>
+      <span class="mins">15分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-14" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-15" id="day-2026-10-15" >
+          <summary>
+            <span><b>Day 59｜10/15（木）</b><small>第57回・弱点発見</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第15課：온천에 가고 싶어요</span></div>
+            <div><b>🧠 単語帳500</b><span>413〜420</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-15:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-15:vocab:0">
+      <span class="tasktext">単語帳500：新出 413〜420＋前日復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-15:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-15:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第15課：온천에 가고 싶어요</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-15:mock57:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-15:mock57:2">
+      <span class="tasktext">第57回：筆記 後半</span>
+      <span class="mins">15分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-15" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-16" id="day-2026-10-16" >
+          <summary>
+            <span><b>Day 60｜10/16（金）</b><small>第57回・弱点発見</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第16課：선물을 사서 돈을 많이 써요</span></div>
+            <div><b>🧠 単語帳500</b><span>421〜428</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-16:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-16:vocab:0">
+      <span class="tasktext">単語帳500：新出 421〜428＋前日復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-16:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-16:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第16課：선물을 사서 돈을 많이 써요</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-16:mock57:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-16:mock57:2">
+      <span class="tasktext">第57回：採点＋ミスを6分類</span>
+      <span class="mins">15分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-16" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-17" id="day-2026-10-17" >
+          <summary>
+            <span><b>Day 61｜10/17（土）</b><small>第57回・弱点発見</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第16課：선물을 사서 돈을 많이 써요</span></div>
+            <div><b>🧠 単語帳500</b><span>429〜436</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-17:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-17:vocab:0">
+      <span class="tasktext">単語帳500：新出 429〜436＋前日復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-17:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-17:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第16課：선물을 사서 돈을 많이 써요</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-17:mock57:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-17:mock57:2">
+      <span class="tasktext">第57回：誤答復習①</span>
+      <span class="mins">15分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-17" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-18" id="day-2026-10-18" >
+          <summary>
+            <span><b>Day 62｜10/18（日）</b><small>第57回・弱点発見</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第14〜16課 復習</span></div>
+            <div><b>🧠 単語帳500</b><span>437〜444</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-18:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-18:vocab:0">
+      <span class="tasktext">単語帳500：新出 437〜444＋前日復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-18:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-18:core:1">
+      <span class="tasktext">でき韓／合格トウミ：第14〜16課 復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-18:mock57:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-18:mock57:2">
+      <span class="tasktext">第57回：誤答復習②</span>
+      <span class="mins">15分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-18" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details></div>
+    </section>
+    <section class="week" data-week="10">
+      <div class="weektitle">
+        <h3>Week 10</h3>
+        <span>10/19〜10/25</span>
+      </div>
+      <div class="daygrid">
+        <details class="daycard" data-day="2026-10-19" id="day-2026-10-19" >
+          <summary>
+            <span><b>Day 63｜10/19（月）</b><small>弱点補修</small></span>
+            <span class="daymins">23分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第17課：결혼식에 뭘 입고 가면 돼요?</span></div>
+            <div><b>🧠 単語帳500</b><span>445〜452</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-19:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-19:vocab:0">
+      <span class="tasktext">単語帳500：新出 445〜452＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-19:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-19:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第17課：결혼식에 뭘 입고 가면 돼요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-19:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-19:listen:2">
+      <span class="tasktext">聞き取り／アプリ：5級演習</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-19" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-20" id="day-2026-10-20" >
+          <summary>
+            <span><b>Day 64｜10/20（火）</b><small>弱点補修</small></span>
+            <span class="daymins">23分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第17課：결혼식에 뭘 입고 가면 돼요?</span></div>
+            <div><b>🧠 単語帳500</b><span>453〜460</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-20:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-20:vocab:0">
+      <span class="tasktext">単語帳500：新出 453〜460＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-20:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-20:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第17課：결혼식에 뭘 입고 가면 돼요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-20:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-20:listen:2">
+      <span class="tasktext">聞き取り／アプリ：5級演習</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-20" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-21" id="day-2026-10-21" >
+          <summary>
+            <span><b>Day 65｜10/21（水）</b><small>弱点補修</small></span>
+            <span class="daymins">23分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第18課：식사라도 같이 할까요?</span></div>
+            <div><b>🧠 単語帳500</b><span>461〜468</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-21:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-21:vocab:0">
+      <span class="tasktext">単語帳500：新出 461〜468＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-21:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-21:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第18課：식사라도 같이 할까요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-21:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-21:listen:2">
+      <span class="tasktext">聞き取り／アプリ：5級演習</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-21" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-22" id="day-2026-10-22" >
+          <summary>
+            <span><b>Day 66｜10/22（木）</b><small>弱点補修</small></span>
+            <span class="daymins">23分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第18課：식사라도 같이 할까요?</span></div>
+            <div><b>🧠 単語帳500</b><span>469〜476</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-22:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-22:vocab:0">
+      <span class="tasktext">単語帳500：新出 469〜476＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-22:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-22:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第18課：식사라도 같이 할까요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-22:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-22:listen:2">
+      <span class="tasktext">聞き取り／アプリ：5級演習</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-22" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-23" id="day-2026-10-23" >
+          <summary>
+            <span><b>Day 67｜10/23（金）</b><small>弱点補修</small></span>
+            <span class="daymins">23分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第19課：사진 좀 찍어 주시겠어요?</span></div>
+            <div><b>🧠 単語帳500</b><span>477〜484</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-23:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-23:vocab:0">
+      <span class="tasktext">単語帳500：新出 477〜484＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-23:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-23:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第19課：사진 좀 찍어 주시겠어요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-23:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-23:listen:2">
+      <span class="tasktext">聞き取り／アプリ：5級演習</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-23" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-24" id="day-2026-10-24" >
+          <summary>
+            <span><b>Day 68｜10/24（土）</b><small>弱点補修</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第20課：자전거를 탈 수 있어요?</span></div>
+            <div><b>🧠 単語帳500</b><span>485〜492</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-24:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-24:vocab:0">
+      <span class="tasktext">単語帳500：新出 485〜492＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-24:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-24:core:1">
+      <span class="tasktext">できる韓国語 初級Ⅰ：第20課：자전거를 탈 수 있어요?</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-24:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-24:listen:2">
+      <span class="tasktext">聞き取り／アプリ：5級演習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-24:mock57review:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-24:mock57review:3">
+      <span class="tasktext">第57回：誤答だけ再挑戦</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-24" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-25" id="day-2026-10-25" >
+          <summary>
+            <span><b>Day 69｜10/25（日）</b><small>弱点補修</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第11〜20課 総復習</span></div>
+            <div><b>🧠 単語帳500</b><span>493〜500</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-25:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-25:vocab:0">
+      <span class="tasktext">単語帳500：新出 493〜500＋前日復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-25:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-25:core:1">
+      <span class="tasktext">でき韓／合格トウミ：第11〜20課 総復習</span>
+      <span class="mins">10分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-25:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-25:listen:2">
+      <span class="tasktext">聞き取り／アプリ：5級演習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-25:mock57review:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-25:mock57review:3">
+      <span class="tasktext">第57回：誤答だけ再挑戦</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-25" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details></div>
+    </section>
+    <section class="week" data-week="11">
+      <div class="weektitle">
+        <h3>Week 11</h3>
+        <span>10/26〜11/01</span>
+      </div>
+      <div class="daygrid">
+        <details class="daycard" data-day="2026-10-26" id="day-2026-10-26" >
+          <summary>
+            <span><b>Day 70｜10/26（月）</b><small>第58回・最終判定</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-26:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-26:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-26:mock58:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-26:mock58:1">
+      <span class="tasktext">第58回：聞き取り 前半</span>
+      <span class="mins">20分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-26" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-27" id="day-2026-10-27" >
+          <summary>
+            <span><b>Day 71｜10/27（火）</b><small>第58回・最終判定</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-27:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-27:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-27:mock58:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-27:mock58:1">
+      <span class="tasktext">第58回：聞き取り 後半</span>
+      <span class="mins">20分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-27" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-28" id="day-2026-10-28" >
+          <summary>
+            <span><b>Day 72｜10/28（水）</b><small>第58回・最終判定</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-28:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-28:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-28:mock58:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-28:mock58:1">
+      <span class="tasktext">第58回：筆記 前半</span>
+      <span class="mins">20分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-28" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-29" id="day-2026-10-29" >
+          <summary>
+            <span><b>Day 73｜10/29（木）</b><small>第58回・最終判定</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-29:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-29:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-29:mock58:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-29:mock58:1">
+      <span class="tasktext">第58回：筆記 後半</span>
+      <span class="mins">20分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-29" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-30" id="day-2026-10-30" >
+          <summary>
+            <span><b>Day 74｜10/30（金）</b><small>第58回・最終判定</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-30:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-30:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-30:mock58:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-30:mock58:1">
+      <span class="tasktext">第58回：採点＋合格ライン確認</span>
+      <span class="mins">20分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-30" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-10-31" id="day-2026-10-31" >
+          <summary>
+            <span><b>Day 75｜10/31（土）</b><small>第58回・最終判定</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-10-31:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-31:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-10-31:mock58:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-10-31:mock58:1">
+      <span class="tasktext">第58回：誤答復習①</span>
+      <span class="mins">20分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-10-31" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-11-01" id="day-2026-11-01" >
+          <summary>
+            <span><b>Day 76｜11/01（日）</b><small>第58回・最終判定</small></span>
+            <span class="daymins">25分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>第58回＋誤答分析</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-11-01:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-01:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-01:mock58:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-01:mock58:1">
+      <span class="tasktext">第58回：誤答復習②＋新形式確認</span>
+      <span class="mins">20分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-11-01" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details></div>
+    </section>
+    <section class="week" data-week="12">
+      <div class="weektitle">
+        <h3>Week 12</h3>
+        <span>11/02〜11/08</span>
+      </div>
+      <div class="daygrid">
+        <details class="daycard" data-day="2026-11-02" id="day-2026-11-02" >
+          <summary>
+            <span><b>Day 77｜11/02（月）</b><small>最終仕上げ</small></span>
+            <span class="daymins">30分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>最終総復習</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-11-02:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-02:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-02:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-02:core:1">
+      <span class="tasktext">合格トウミ／でき韓：語彙×：即答できない語だけ</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-02:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-02:listen:2">
+      <span class="tasktext">聞き取り：弱点音声を集中確認</span>
+      <span class="mins">6分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-02:mistakes:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-02:mistakes:3">
+      <span class="tasktext">第57・58回：誤答だけ見直し</span>
+      <span class="mins">8分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-11-02" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-11-03" id="day-2026-11-03" >
+          <summary>
+            <span><b>Day 78｜11/03（火）</b><small>最終仕上げ</small></span>
+            <span class="daymins">30分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>最終総復習</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-11-03:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-03:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-03:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-03:core:1">
+      <span class="tasktext">合格トウミ／でき韓：助詞・語尾</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-03:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-03:listen:2">
+      <span class="tasktext">聞き取り：弱点音声を集中確認</span>
+      <span class="mins">6分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-03:mistakes:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-03:mistakes:3">
+      <span class="tasktext">第57・58回：誤答だけ見直し</span>
+      <span class="mins">8分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-11-03" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-11-04" id="day-2026-11-04" >
+          <summary>
+            <span><b>Day 79｜11/04（水）</b><small>最終仕上げ</small></span>
+            <span class="daymins">30分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>最終総復習</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-11-04:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-04:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-04:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-04:core:1">
+      <span class="tasktext">合格トウミ／でき韓：数字・時刻・曜日</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-04:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-04:listen:2">
+      <span class="tasktext">聞き取り：弱点音声を集中確認</span>
+      <span class="mins">6分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-04:mistakes:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-04:mistakes:3">
+      <span class="tasktext">第57・58回：誤答だけ見直し</span>
+      <span class="mins">8分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-11-04" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-11-05" id="day-2026-11-05" >
+          <summary>
+            <span><b>Day 80｜11/05（木）</b><small>最終仕上げ</small></span>
+            <span class="daymins">30分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>最終総復習</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-11-05:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-05:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-05:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-05:core:1">
+      <span class="tasktext">合格トウミ／でき韓：あいさつ・頻出表現</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-05:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-05:listen:2">
+      <span class="tasktext">聞き取り：弱点音声を集中確認</span>
+      <span class="mins">6分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-05:mistakes:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-05:mistakes:3">
+      <span class="tasktext">第57・58回：誤答だけ見直し</span>
+      <span class="mins">8分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-11-05" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-11-06" id="day-2026-11-06" >
+          <summary>
+            <span><b>Day 81｜11/06（金）</b><small>最終仕上げ</small></span>
+            <span class="daymins">30分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>最終総復習</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-11-06:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-06:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-06:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-06:core:1">
+      <span class="tasktext">合格トウミ／でき韓：聞き取り弱点</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-06:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-06:listen:2">
+      <span class="tasktext">聞き取り：弱点音声を集中確認</span>
+      <span class="mins">6分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-06:mistakes:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-06:mistakes:3">
+      <span class="tasktext">第57・58回：誤答だけ見直し</span>
+      <span class="mins">8分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-11-06" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard" data-day="2026-11-07" id="day-2026-11-07" >
+          <summary>
+            <span><b>Day 82｜11/07（土）</b><small>最終仕上げ</small></span>
+            <span class="daymins">30分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>最終総復習</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-11-07:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-07:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-07:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-07:core:1">
+      <span class="tasktext">合格トウミ／でき韓：誤答だけ軽く確認</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-07:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-07:listen:2">
+      <span class="tasktext">聞き取り：弱点音声を集中確認</span>
+      <span class="mins">6分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-07:mistakes:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-07:mistakes:3">
+      <span class="tasktext">第57・58回：誤答だけ見直し</span>
+      <span class="mins">8分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-11-07" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details>
+        <details class="daycard exam" data-day="2026-11-08" id="day-2026-11-08" >
+          <summary>
+            <span><b>Day 83｜11/08（日）</b><small>本番</small></span>
+            <span class="daymins">28分</span>
+          </summary>
+          <div class="facts">
+            <div><b>📘 できる韓国語</b><span>ハン検5級 本番</span></div>
+            <div><b>🧠 単語帳500</b><span>復習のみ</span></div>
+            <div><b>⌨️ TypeHangul</b><span>なし</span></div>
+          </div>
+          <div class="tasklist">
+    <label class="taskline" data-task-row="2026-11-08:vocab:0">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-08:vocab:0">
+      <span class="tasktext">単語帳500：△・×だけ復習</span>
+      <span class="mins">8分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-08:core:1">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-08:core:1">
+      <span class="tasktext">最終確認：数字・助詞・あいさつを眺める</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-08:listen:2">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-08:listen:2">
+      <span class="tasktext">耳慣らし：聞き取り音声を軽く1本</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-08:vocab:3">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-08:vocab:3">
+      <span class="tasktext">単語：最後まで残った×だけ</span>
+      <span class="mins">5分</span>
+    </label>
+    <label class="taskline" data-task-row="2026-11-08:ready:4">
+      <input type="checkbox" class="taskcheck" data-task="2026-11-08:ready:4">
+      <span class="tasktext">受験票・筆記具・会場確認</span>
+      <span class="mins">5分</span>
+    </label></div>
+          <textarea class="memo" data-note="2026-11-08" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+        </details></div>
+    </section>
+</main>
+
+<script>
+(function(){
+  const STORAGE_KEY="hangeul5_daily_wbs_2026_v3";
+  let mem={tasks:{},notes:{}};
+  function load(){
+    try{ const x=localStorage.getItem(STORAGE_KEY); if(x) mem=JSON.parse(x); }catch(e){}
+    if(!mem.tasks) mem.tasks={}; if(!mem.notes) mem.notes={};
+  }
+  function save(){
+    try{ localStorage.setItem(STORAGE_KEY,JSON.stringify(mem)); }catch(e){}
+  }
+  function dayDone(el){
+    const checks=[...el.querySelectorAll(".taskcheck")];
+    return checks.length && checks.every(c=>c.checked);
+  }
+  function syncUI(){
+    document.querySelectorAll(".taskcheck").forEach(c=>{ c.checked=!!mem.tasks[c.dataset.task]; });
+    document.querySelectorAll(".memo").forEach(n=>{ n.value=mem.notes[n.dataset.note]||""; });
+    const ds=[...document.querySelectorAll(".daycard")];
+    const done=ds.filter(dayDone).length;
+    document.getElementById("doneDays").textContent=done+" / 83";
+    const pct=Math.round(done/83*100);
+    document.getElementById("pct").textContent=pct+"%";
+    document.getElementById("progress").style.width=pct+"%";
+    applyFilters();
+  }
+  function applyFilters(){
+    const w=document.getElementById("weekFilter").value;
+    const s=document.getElementById("statusFilter").value;
+    document.querySelectorAll(".week").forEach(week=>{
+      const weekOk=!w || week.dataset.week===w;
+      let any=false;
+      week.querySelectorAll(".daycard").forEach(day=>{
+        const done=dayDone(day);
+        const statusOk=!s || (s==="done"&&done) || (s==="open"&&!done);
+        day.classList.toggle("hidden",!(weekOk&&statusOk));
+        if(weekOk&&statusOk) any=true;
+      });
+      week.classList.toggle("hidden",!any);
+    });
+  }
+  load();
+  document.querySelectorAll(".taskcheck").forEach(c=>c.addEventListener("change",()=>{
+    mem.tasks[c.dataset.task]=c.checked; save(); syncUI();
+  }));
+  document.querySelectorAll(".memo").forEach(n=>n.addEventListener("input",()=>{mem.notes[n.dataset.note]=n.value;save();}));
+  document.getElementById("weekFilter").addEventListener("change",applyFilters);
+  document.getElementById("statusFilter").addEventListener("change",applyFilters);
+  document.getElementById("todayBtn").addEventListener("click",()=>document.getElementById("day-2026-08-18").scrollIntoView({behavior:"smooth",block:"start"}));
+  document.getElementById("clearBtn").addEventListener("click",()=>{
+    if(confirm("すべてのチェックを解除しますか？")){mem.tasks={};save();syncUI();}
+  });
+  syncUI();
+})();
+</script>
+</body></html>
