@@ -24,6 +24,64 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
 .daycard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:background .2s,border-color .2s}.daycard.current{outline:2px solid var(--nav)}.daycard.exam{background:var(--red)}.daycard.offday{background:var(--off)}.daycard.completed{background:#ecfdf5;border-color:#86efac}.daycard.completed summary b::after{content:' ✓ 完了';display:inline-block;margin-left:6px;color:#047857;font-size:10px;font-weight:800}.daycard.completed .facts div{background:#f0fdf4}.daycard summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:8px;padding:10px}.daycard summary::-webkit-details-marker{display:none}.daycard summary b{font-size:12.5px}.daycard summary small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.daymins{font-size:11px;color:var(--muted);white-space:nowrap}
 .facts{display:grid;gap:5px;padding:0 10px 8px}.facts div{background:#f7f8fa;border-radius:9px;padding:7px}.facts b{display:block;font-size:10px;color:var(--muted)}.facts span{display:block;font-size:11px;margin-top:2px;line-height:1.35}.tasklist{padding:0 10px}.memo{margin:7px 10px 10px;width:calc(100% - 20px);min-height:56px;border:1px solid var(--line);border-radius:9px;padding:8px;font:inherit;font-size:12px}.hidden{display:none!important}
 @media(max-width:800px){.kpis{grid-template-columns:repeat(2,1fr)}.todaygrid{grid-template-columns:1fr}.daygrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.daygrid{grid-template-columns:1fr}}
+
+/* ===== WBS convenience pack ===== */
+.quicknav{display:flex;gap:7px;margin:10px 0 8px;position:sticky;top:67px;z-index:8;background:rgba(244,246,248,.94);backdrop-filter:blur(12px);padding:6px 0}
+.viewtab{flex:1;font-weight:750;color:var(--muted)}
+.viewtab.active{background:var(--nav);color:#fff;border-color:var(--nav)}
+.filterbar{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 12px}
+.filterbar select{min-width:130px}
+.utilitygrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 12px}
+.utility{background:#fff;border:1px solid var(--line);border-radius:15px;padding:12px}
+.utility h3{font-size:14px;margin:0}.utility p{font-size:11px;color:var(--muted);line-height:1.5;margin:5px 0 0}
+.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}.sectionhead span{font-size:11px;color:var(--muted)}
+.carrylist,.weaklist{display:grid;gap:6px}.carryitem,.weakitem{display:flex;gap:8px;align-items:center;background:#f7f8fa;border-radius:10px;padding:8px;font-size:11px;line-height:1.4}
+.carryitem button{margin-left:auto;white-space:nowrap;padding:5px 7px;font-size:10px}
+.weakadd{display:grid;grid-template-columns:110px 1fr auto;gap:6px}.weakadd input{min-width:0;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;background:#fff}
+.weakitem .weakcat{font-size:10px;font-weight:800;background:#eef2ff;border-radius:999px;padding:3px 6px;white-space:nowrap}.weakitem .weaktxt{flex:1}
+.iconbtn{padding:4px 7px;font-size:11px}.emptyhint{font-size:11px;color:var(--muted);padding:5px 1px}
+.toolbuttons{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.toolbuttons button{flex:1;min-width:110px}
+.todaystatus{display:inline-flex;gap:6px;align-items:center;background:rgba(255,255,255,.10);border-radius:999px;padding:5px 9px;font-size:11px;margin:0 0 9px;color:#e2e8f0}
+.todaymemo{margin-top:10px}.todaymemo textarea{width:100%;min-height:58px;border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:8px;background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:12px;resize:vertical}
+.todaymemo textarea::placeholder{color:#94a3b8}.todaymemo .memoactions{display:flex;justify-content:flex-end;margin-top:6px}.todaymemo button{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.18);color:#fff}
+.exam-mode{background:#fff1f2;border:1px solid #fecdd3;border-radius:16px;padding:13px;margin-bottom:12px}.exam-mode h3{margin:0;font-size:15px;color:#9f1239}.exam-mode .examgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}.exam-mode .examcell{background:#fff;border-radius:10px;padding:8px}.exam-mode b{display:block;font-size:12px}.exam-mode span{display:block;font-size:11px;color:#6b7280;margin-top:2px;line-height:1.4}
+.daycard.overdue:not(.completed){background:#fffbeb;border-color:#fcd34d}.daycard.overdue:not(.completed) .facts div{background:#fffdf5}
+.daycard.current:not(.completed){border-color:#334155;box-shadow:0 0 0 2px rgba(15,23,42,.13)}
+.daycard.current:not(.completed) summary{background:#f8fafc}
+.daycard.exam:not(.completed){background:#fff1f2;border-color:#fda4af}
+.daycard.offday:not(.completed){background:#f4f4f5;border-color:#d4d4d8}
+.schedule-empty{background:#fff;border:1px dashed var(--line);border-radius:14px;padding:18px;text-align:center;color:var(--muted);font-size:12px;margin-bottom:18px}
+.badge{display:inline-block;border-radius:999px;padding:2px 7px;font-size:10px;font-weight:800}
+.badge.warn{background:#fef3c7;color:#92400e}.badge.ok{background:#d1fae5;color:#065f46}
+@media(max-width:800px){.utilitygrid{grid-template-columns:1fr}.exam-mode .examgrid{grid-template-columns:1fr 1fr}.quicknav{top:64px}}
+@media(max-width:520px){.weakadd{grid-template-columns:96px 1fr}.weakadd button{grid-column:1/-1}.exam-mode .examgrid{grid-template-columns:1fr}}
+
+
+/* ===== Final completion pack v2.0 ===== */
+.todayactions{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0 10px}
+.todayactions button{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.18);color:#fff;font-weight:800}
+.today.rescue-active .todaygrid{display:none}
+.rescue-mode{background:#eff6ff;border:1px solid #93c5fd;border-radius:16px;padding:13px;margin-bottom:12px}
+.rescue-mode h3{margin:0;color:#1e3a8a;font-size:15px}
+.rescue-mode p{font-size:11px;color:#475569;line-height:1.55;margin:5px 0 9px}
+.rescue-list{display:grid;gap:7px}
+.rescue-item{display:grid;grid-template-columns:46px 1fr;gap:8px;align-items:start;background:#fff;border-radius:11px;padding:9px}
+.rescue-item b{font-size:12px;color:#1d4ed8}.rescue-item span{font-size:11px;line-height:1.45}
+.lag-panel{background:#fffbeb;border:1px solid #fcd34d;border-radius:16px;padding:13px;margin-bottom:12px}
+.lag-panel h3{margin:0;font-size:15px;color:#92400e}
+.lag-stats{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.lag-chip{background:#fff7ed;border-radius:999px;padding:4px 8px;font-size:10px;font-weight:800;color:#9a3412}
+.lag-advice{background:#fff;border-radius:10px;padding:9px;font-size:11px;line-height:1.55}
+.lag-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+.diag-output{display:grid;gap:6px;margin-top:9px}
+.diag-row{display:flex;justify-content:space-between;gap:10px;background:#f8fafc;border-radius:9px;padding:8px;font-size:11px}
+.diag-row strong{font-weight:800}.diag-ok{color:#047857}.diag-warn{color:#b45309}.diag-bad{color:#b91c1c}
+.versionbadge{display:inline-flex;align-items:center;gap:6px;background:#eef2ff;color:#3730a3;border-radius:999px;padding:4px 8px;font-size:10px;font-weight:850}
+.changelog{margin-top:8px;border-top:1px solid var(--line);padding-top:7px}
+.changelog summary{font-size:11px;font-weight:800;cursor:pointer}
+.changelog .entry{font-size:10px;line-height:1.5;color:var(--muted);padding:5px 0;border-bottom:1px dashed var(--line)}
+.versionfoot{text-align:center;color:#94a3b8;font-size:10px;padding:16px 0 2px}
+
 </style>
 </head>
 <body>
@@ -32,7 +90,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
 <div class="notice">
 <b>🔒 進捗保護：</b>既存のチェック・メモを引き継ぎます。保存キーと既存タスクIDは変更していません。<br><br><b>👑 プレミアム運用ルール：</b>
 リスニングは週3〜4回、苦手克服は誤答が溜まった日にだけ、単語集402は<b>語彙・弱点とは別の新出ノルマにしません</b>。既習語の意味・音声確認専用です。
-8/18〜19は東京教材なし、8/20〜25はペウギ5級、8/26は22時着の移動日で完全OFF、8/27から『できる韓国語 初級Ⅰ』を再開します。 単語集402は8/20〜8/27だけ、日別の確認語数と音声確認手順も表示します。 ハン検アプリは全日程で、正式分類名「すべて／発音・表記／語彙／文法／会話・表現／読解」に統一しています。 無料の500語アプリは毎日の必須タスクから外し、同じチェック欄を『ペウギ語彙／Premium 402／合格トウミ／ハン検誤答復習』へ再配分しています。 完了したDayは自動で折りたたみ、未完了Dayだけ初期状態で開きます。 Premium 402はアプリ内で5級・4級が混在するため、WBSではペウギ5級・合格トウミ5級・5級過去問で確認済みの内容だけを指定し、4級向け「連結語尾・活用（その2）」などは割り当てません。
+8/18〜19は東京教材なし、8/20〜25はペウギ5級、8/26は22時着の移動日で完全OFF、8/27から『できる韓国語 初級Ⅰ』を再開します。 単語集402は8/20〜8/27だけ、日別の確認語数と音声確認手順も表示します。 ハン検アプリは全日程で、正式分類名「すべて／発音・表記／語彙／文法／会話・表現／読解」に統一しています。 無料の500語アプリは毎日の必須タスクから外し、同じチェック欄を『ペウギ語彙／Premium 402／合格トウミ／ハン検誤答復習』へ再配分しています。 完了したDayは自動で折りたたみ、未完了Dayだけ初期状態で開きます。 Premium 402はアプリ内で5級・4級が混在するため、WBSではペウギ5級・合格トウミ5級・5級過去問で確認済みの内容だけを指定し、4級向け「連結語尾・活用（その2）」などは割り当てません。 便利機能として「今日／未完了／全日程」表示、持ち越し、残り件数・時間、苦手BOX、教材フィルター、バックアップ／復元、11/2以降の試験直前モードを一括実装しています。 完成版ではさらに、10分救済モード・遅れ検知と追いつき提案・バージョン/更新履歴・データ自己診断を追加しています。
 </div>
 
 <section class="kpis">
@@ -45,6 +103,10 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
 <section class="today" id="todayPanel">
  <h2 id="todayTitle">今日の学習｜8/18（火）</h2>
  <div class="meta" id="todayMeta"></div>
+ <div class="todaystatus" id="todayStatus">残りを計算中…</div>
+ <div class="todayactions">
+   <button id="rescueBtn" type="button">🆘 10分救済モード</button>
+ </div>
  <div class="todaygrid">
    <div class="todaybox" id="todayTasks"></div>
    <div class="todayfacts">
@@ -53,13 +115,109 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
      <div class="todayfact"><b>👑 プレミアム</b><span id="todayPremium"></span></div><div class="todayfact"><b>📱 ハン検アプリ</b><span id="todayAppGuide"></span></div>
    </div>
  </div>
+ <div class="todaymemo">
+   <textarea id="todayMemo" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
+   <div class="memoactions"><button id="memoToWeakBtn" type="button">⭐ このメモを苦手BOXへ</button></div>
+ </div>
 </section>
 
-<div class="controls">
- <button class="primary" id="todayBtn" type="button">今日へ</button>
+
+<section class="rescue-mode hidden" id="rescueMode">
+ <h3>🆘 今日を捨てない10分プラン</h3>
+ <p>通常タスクは変更しません。今日の未完了から優先度順に10分だけ切り出します。終わったら、実際に完了した通常タスクだけチェックしてください。</p>
+ <div class="rescue-list" id="rescueList"></div>
+</section>
+
+<section class="lag-panel hidden" id="lagPanel">
+ <h3 id="lagTitle">⚠️ 遅れを検知</h3>
+ <div class="lag-stats" id="lagStats"></div>
+ <div class="lag-advice" id="lagAdvice"></div>
+ <div class="lag-actions">
+   <button id="lagIncompleteBtn" type="button">未完了一覧を見る</button>
+   <button id="lagRescueBtn" type="button">10分救済を使う</button>
+ </div>
+</section>
+
+<section class="exam-mode hidden" id="examMode">
+ <h3 id="examModeTitle">🔥 試験直前モード</h3>
+ <div class="examgrid">
+   <div class="examcell"><b>今日の重点</b><span id="examFocus"></span></div>
+   <div class="examcell"><b>未解決の苦手</b><span id="examWeak"></span></div>
+   <div class="examcell"><b>運用ルール</b><span>新しい内容を増やさず、△・×だけ潰す</span></div>
+ </div>
+</section>
+
+<section class="utilitygrid">
+ <div class="utility hidden" id="carryPanel">
+   <div class="sectionhead"><h3>⏪ 持ち越し</h3><span id="carryCount"></span></div>
+   <div class="carrylist" id="carryList"></div>
+ </div>
+ <div class="utility" id="weakBox">
+   <div class="sectionhead"><h3>⭐ 苦手BOX</h3><span id="weakCount">0件</span></div>
+   <div class="weakadd">
+     <select id="weakCat">
+       <option>語彙</option><option>発音</option><option>文法</option><option>会話・表現</option><option>読解</option><option>メモ</option>
+     </select>
+     <input id="weakInput" type="text" placeholder="例：은/는 の使い分け">
+     <button id="weakAddBtn" type="button">追加</button>
+   </div>
+   <div class="weaklist" id="weakList"></div>
+ </div>
+</section>
+
+<section class="utility" style="margin-bottom:12px">
+ <div class="sectionhead"><h3>🛟 データ保護</h3><span id="backupStamp">未バックアップ</span></div>
+ <p>チェック・メモ・苦手BOXを1つのJSONに保存できます。ホーム画面アプリを削除する前は必ずバックアップ。</p>
+ <div class="toolbuttons">
+   <button id="backupBtn" type="button">バックアップを書き出す</button>
+   <button id="restoreBtn" type="button">バックアップから復元</button>
+ </div>
+ <input id="restoreFile" type="file" accept="application/json,.json" class="hidden">
+</section>
+
+<section class="utilitygrid">
+ <div class="utility" id="diagPanel">
+   <div class="sectionhead"><h3>🩺 データ自己診断</h3><span id="diagSummary">未診断</span></div>
+   <p>更新後に「進捗が残っているか」「タスクIDが壊れていないか」を、この端末だけで点検します。</p>
+   <div class="toolbuttons"><button id="diagBtn" type="button">診断を実行</button></div>
+   <div class="diag-output" id="diagOutput"></div>
+ </div>
+ <div class="utility" id="versionPanel">
+   <div class="sectionhead"><h3>🧾 バージョン</h3><span class="versionbadge" id="versionBadge">v2.0.0</span></div>
+   <p id="versionText">更新日 2026/8/20｜完成版</p>
+   <details class="changelog">
+     <summary>更新履歴を見る</summary>
+     <div class="entry"><b>v2.0.0｜2026/8/20</b><br>10分救済・遅れ検知と追いつき提案・バージョン表示・データ自己診断を追加。</div>
+     <div class="entry"><b>v1.9.0｜2026/8/20</b><br>今日/未完了/全日程、持ち越し、残り件数/時間、苦手BOX、教材フィルター、バックアップ/復元、試験直前モード。</div>
+     <div class="entry"><b>v1.8.0｜2026/8/20</b><br>Premium 402を5級範囲に絞り、分野→サブカテゴリ→当日内容まで具体化。</div>
+     <div class="entry"><b>v1.7.0｜2026/8/20</b><br>完了Dayの色分け・自動折りたたみを追加。</div>
+   </details>
+ </div>
+</section>
+
+<div class="quicknav" id="viewTabs">
+ <button class="viewtab active" type="button" data-view="today">今日</button>
+ <button class="viewtab" type="button" data-view="incomplete">未完了</button>
+ <button class="viewtab" type="button" data-view="all">全日程</button>
+</div>
+
+<div class="filterbar">
  <select id="weekFilter"><option value="">全Week</option><option value="1">Week 1</option><option value="2">Week 2</option><option value="3">Week 3</option><option value="4">Week 4</option><option value="5">Week 5</option><option value="6">Week 6</option><option value="7">Week 7</option><option value="8">Week 8</option><option value="9">Week 9</option><option value="10">Week 10</option><option value="11">Week 11</option><option value="12">Week 12</option></select>
- <select id="statusFilter"><option value="">全状態</option><option value="open">未完了</option><option value="done">完了</option></select>
+ <select id="materialFilter">
+   <option value="">全教材</option>
+   <option value="peugi">ペウギ5級</option>
+   <option value="dekiru">できる韓国語</option>
+   <option value="typehangul">TypeHangul</option>
+   <option value="app">ハン検アプリ</option>
+   <option value="premium402">Premium 402</option>
+   <option value="toumi">合格トウミ</option>
+   <option value="past">過去問</option>
+ </select>
  <button id="clearBtn" type="button">チェックを全解除</button>
+</div>
+<div id="scheduleEmpty" class="schedule-empty hidden">条件に合うDayはありません。</div>
+
+<div class="controls hidden">
 </div>
 
 
@@ -2277,20 +2435,37 @@ header{position:sticky;top:0;z-index:10;background:rgba(244,246,248,.96);backdro
           <textarea class="memo" data-note="2026-11-08" placeholder="今日のメモ：苦手単語・聞き取れなかった音など"></textarea>
         </details></div>
     </section>
+<div class="versionfoot">ハン検5級 Daily WBS v2.0.0｜Updated 2026-08-20</div>
 </main>
 
 <script>
 const DAYS=[{"day": 1, "date": "2026-08-18", "week": 1, "dow": "火", "phase": "東京教材なし・助走", "lesson": "東京教材なし期間：TypeHangulで基本母音・子音に入る", "vocab": "無料500語アプリは必須から除外", "typehangul": 12, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：基本母音・基本子音の打鍵", "minutes": 12}, {"key": "vocab", "label": "ペウギ到着前：TypeHangul/ハン検アプリで出た既知語を5語だけ確認（意味→音読1回）", "minutes": 6}, {"key": "app", "label": "ハン検アプリ：練習モード → 5級 →「発音・表記」→ 5分", "minutes": 7}], "isExam": false, "appGuide": "発音・表記"}, {"day": 2, "date": "2026-08-19", "week": 1, "dow": "水", "phase": "東京教材なし・助走", "lesson": "東京教材なし期間：母音・子音を読めるようにする", "vocab": "無料500語アプリは必須から除外", "typehangul": 12, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：基本母音・基本子音の打鍵", "minutes": 12}, {"key": "vocab", "label": "ペウギ到着前：TypeHangul/ハン検アプリで出た既知語を5語だけ確認（意味→音読1回）", "minutes": 5}, {"key": "app", "label": "ハン検アプリ：練習モード → 5級 →「発音・表記」→ 3分", "minutes": 6}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニングを2〜3問だけ聞く", "minutes": 2}], "isExam": false, "appGuide": "発音・表記"}, {"day": 3, "date": "2026-08-20", "week": 1, "dow": "木", "phase": "東京教材なし・ペウギ導入", "lesson": "ペウギ5級 1課 p.16〜21：ハングルの「あ・い・う・え・お」／母音字とその発音（前半）", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 28, "tasks": [{"key": "peugi", "label": "ペウギ5級：1課 p.16〜21「ハングルの『あ・い・う・え・お』」", "minutes": 12}, {"key": "typehangul", "label": "TypeHangul：「母音」ボタン 5分", "minutes": 5}, {"key": "vocab", "label": "ペウギ1課の語彙：本文・練習に出た語を5〜8語だけ確認（意味→音声/音読→1回復唱）", "minutes": 6}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニングを3〜5問", "minutes": 3}, {"key": "app", "label": "ハン検アプリ：練習モード → 5級 →「発音・表記」→ 2分", "minutes": 2}], "isExam": false, "appGuide": "発音・表記"}, {"day": 4, "date": "2026-08-21", "week": 1, "dow": "金", "phase": "東京教材なし・ペウギ導入", "lesson": "ペウギ5級 2課 p.22〜25：ハングルの「あ・か・さ・た・な」／子音字とその発音（前半）", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 28, "tasks": [{"key": "peugi", "label": "ペウギ5級：2課 p.22〜25「ハングルの『あ・か・さ・た・な』」", "minutes": 12}, {"key": "typehangul", "label": "TypeHangul：「子音」ボタン 5分", "minutes": 5}, {"key": "vocab", "label": "ペウギ2課の語彙：本文・練習に出た語を5〜8語だけ確認（意味→音声/音読→1回復唱）", "minutes": 6}, {"key": "app", "label": "ハン検アプリ：練習モード → 5級 →「発音・表記」→ 2分", "minutes": 2}, {"key": "premium_vocab", "label": "🗂 Premium 402：発音・表記 → 基本子音（平音） → ペウギ2課で習った平音だけ5個。文字を見る→音声1回→復唱1回", "minutes": 3}], "isExam": false, "appGuide": "発音・表記", "premium402Guide": "発音・表記 → 基本子音（平音） → ペウギ2課で習った平音だけ5個。文字を見る→音声1回→復唱1回"}, {"day": 5, "date": "2026-08-22", "week": 1, "dow": "土", "phase": "東京教材なし・ペウギ導入", "lesson": "ペウギ5級 3課 p.26〜29：ハングルの「や・ゆ・よ・わ」／母音字とその発音（後半）", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 28, "tasks": [{"key": "peugi", "label": "ペウギ5級：3課 p.26〜29「ハングルの『や・ゆ・よ・わ』」", "minutes": 12}, {"key": "typehangul", "label": "TypeHangul：「二重母音」ボタン 5分", "minutes": 5}, {"key": "vocab", "label": "ペウギ3課の語彙：本文・練習に出た語を5〜8語だけ確認（意味→音声/音読→1回復唱）", "minutes": 6}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニングを3〜5問", "minutes": 3}, {"key": "premium_weak", "label": "🩹 苦手克服：直近の誤答だけ解き直す", "minutes": 2}], "isExam": false, "appGuide": "発音・表記"}, {"day": 6, "date": "2026-08-23", "week": 1, "dow": "日", "phase": "東京教材なし・ペウギ導入", "lesson": "ペウギ5級 4課 p.30〜35：ハングルには「か」が3つ?!／子音字とその発音（後半）", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 28, "tasks": [{"key": "peugi", "label": "ペウギ5級：4課 p.30〜35「ハングルには『か』が3つ?!」", "minutes": 12}, {"key": "typehangul", "label": "TypeHangul：「二重子音」3分＋「子音」2分", "minutes": 5}, {"key": "vocab", "label": "ペウギ4課の語彙：本文・練習に出た語を5〜8語だけ確認（意味→音声/音読→1回復唱）", "minutes": 6}, {"key": "app", "label": "ハン検アプリ：練習モード → 5級 →「発音・表記」→ 2分", "minutes": 2}, {"key": "premium_vocab", "label": "🗂 Premium 402：発音・表記 → 激音・濃音 → ペウギ4課で習った激音・濃音だけ5〜6個。聞き分けに迷う音は2回再生", "minutes": 3}], "isExam": false, "appGuide": "発音・表記", "premium402Guide": "発音・表記 → 激音・濃音 → ペウギ4課で習った激音・濃音だけ5〜6個。聞き分けに迷う音は2回再生"}, {"day": 7, "date": "2026-08-24", "week": 2, "dow": "月", "phase": "東京教材なし・ペウギ導入", "lesson": "ペウギ5級 5課 p.36〜41：ハングルの「っ」「ん」／パッチムと終声", "vocab": "無料500語アプリは必須から除外", "typehangul": 4, "minutes": 28, "tasks": [{"key": "peugi", "label": "ペウギ5級：5課 p.36〜41「ハングルの『っ』『ん』」", "minutes": 13}, {"key": "typehangul", "label": "TypeHangul：「パッチム」ボタン 4分", "minutes": 4}, {"key": "vocab", "label": "ペウギ5課の語彙：本文・練習に出た語を5〜8語だけ確認（意味→音声/音読→1回復唱）", "minutes": 6}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニングを3〜5問", "minutes": 3}, {"key": "premium_weak", "label": "🩹 苦手克服：誤答だけ2〜3問", "minutes": 2}], "isExam": false, "appGuide": "発音・表記"}, {"day": 8, "date": "2026-08-25", "week": 2, "dow": "火", "phase": "東京教材なし・ペウギ導入", "lesson": "ペウギ5級 6課 p.42〜45：タン＋オ＝タノ?!／連音化・2字母からなるパッチム", "vocab": "無料500語アプリは必須から除外", "typehangul": 4, "minutes": 28, "tasks": [{"key": "peugi", "label": "ペウギ5級：6課 p.42〜45「タン＋オ＝タノ?!」", "minutes": 13}, {"key": "typehangul", "label": "TypeHangul：「パッチム」3分＋「二重パッチム」1分", "minutes": 4}, {"key": "vocab", "label": "ペウギ6課の語彙：本文・練習に出た語を5〜8語だけ確認（意味→音声/音読→1回復唱）", "minutes": 6}, {"key": "app", "label": "ハン検アプリ：練習モード → 5級 →「発音・表記」→ 2分", "minutes": 2}, {"key": "premium_vocab", "label": "🗂 Premium 402：発音・表記 → パッチムと音の変化 → ペウギ5〜6課の5級範囲だけ。パッチム→連音の順に5個、音声1回→復唱1回", "minutes": 3}], "isExam": false, "appGuide": "発音・表記", "premium402Guide": "発音・表記 → パッチムと音の変化 → ペウギ5〜6課の5級範囲だけ。パッチム→連音の順に5個、音声1回→復唱1回"}, {"day": 9, "date": "2026-08-26", "week": 2, "dow": "水", "phase": "移動日", "lesson": "東京移動日：22時着のため学習なし", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 0, "tasks": [{"key": "off", "label": "✈️ 東京移動日・学習なし", "minutes": 0}], "isExam": false, "appGuide": "OFF"}, {"day": 10, "date": "2026-08-27", "week": 2, "dow": "木", "phase": "東京教材再開", "lesson": "ペウギ5級 7課 p.46〜49：あいさつ／합니다体・해요体 ＋ 『できる韓国語 初級Ⅰ』再開", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 28, "tasks": [{"key": "vocab", "label": "🗂 Premium 402：会話・表現 → 基本のあいさつ → ペウギ7課の5級あいさつだけ。안녕하세요系など既習表現を5個、音声→復唱", "minutes": 6}, {"key": "dekiru", "label": "できる韓国語 初級Ⅰ：入門（基本母音・基本子音）", "minutes": 10}, {"key": "peugi", "label": "ペウギ5級：7課 p.46〜49「あいさつ」＋합니다体・해요体", "minutes": 5}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニングを5問", "minutes": 4}, {"key": "premium_weak", "label": "🩹 苦手克服：直近の誤答だけ", "minutes": 3}], "isExam": false, "appGuide": "会話・表現", "premium402Guide": "会話・表現 → 基本のあいさつ → ペウギ7課の5級あいさつだけ。안녕하세요系など既習表現を5個、音声→復唱"}, {"day": 11, "date": "2026-08-28", "week": 2, "dow": "金", "phase": "東京教材再開", "lesson": "できる韓国語：基本母音・子音の続き", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 28, "tasks": [{"key": "vocab", "label": "ペウギ＋でき韓の既習語を6語確認（意味→音読1回。Premium 402は別タスクで実施）", "minutes": 6}, {"key": "dekiru", "label": "できる韓国語 初級Ⅰ：基本母音・基本子音の続き", "minutes": 10}, {"key": "peugi", "label": "ペウギ5級：発音を照合", "minutes": 5}, {"key": "premium_vocab", "label": "🗂 Premium 402：発音・表記 → 基本母音（10個）／基本子音（平音） → でき韓入門で迷った文字だけ5〜6個。正しい音を1回聞いて即復唱", "minutes": 4}, {"key": "typehangul", "label": "TypeHangul：読みの自動化", "minutes": 3}], "isExam": false, "appGuide": "発音・表記", "premium402Guide": "発音・表記 → 基本母音（10個）／基本子音（平音） → でき韓入門で迷った文字だけ5〜6個。正しい音を1回聞いて即復唱"}, {"day": 12, "date": "2026-08-29", "week": 2, "dow": "土", "phase": "東京教材再開", "lesson": "できる韓国語：合成母音・パッチムへ", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 28, "tasks": [{"key": "vocab", "label": "🗂 Premium 402：発音・表記 → パッチムと音の変化 → でき韓で習った5級パッチムだけ5個。語末まで聞く→復唱1回", "minutes": 6}, {"key": "dekiru", "label": "できる韓国語 初級Ⅰ：合成母音・パッチム", "minutes": 10}, {"key": "peugi", "label": "ペウギ5級：『っ・ん』／パッチム確認", "minutes": 5}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニングを5問", "minutes": 4}, {"key": "typehangul", "label": "TypeHangul：パッチムの読み分け", "minutes": 3}], "isExam": false, "appGuide": "発音・表記", "premium402Guide": "発音・表記 → パッチムと音の変化 → でき韓で習った5級パッチムだけ5個。語末まで聞く→復唱1回"}, {"day": 13, "date": "2026-08-30", "week": 2, "dow": "日", "phase": "東京教材再開", "lesson": "できる韓国語：文字・発音を仕上げる", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 28, "tasks": [{"key": "vocab", "label": "ペウギ＋でき韓で今週出た語を6語だけ復習（Premium 402は別タスクで実施）", "minutes": 6}, {"key": "dekiru", "label": "できる韓国語 初級Ⅰ：文字・発音の総仕上げ", "minutes": 10}, {"key": "peugi", "label": "ペウギ5級：文字・発音の総確認", "minutes": 5}, {"key": "premium_weak", "label": "🩹 苦手克服：今週の誤答だけ", "minutes": 4}, {"key": "premium_vocab", "label": "🗂 Premium 402：発音・表記 → つづりと読みの注意 → 8/20〜29で読み間違えた5級文字・音だけ5〜6個。新規は増やさない", "minutes": 3}], "isExam": false, "appGuide": "発音・表記", "premium402Guide": "発音・表記 → つづりと読みの注意 → 8/20〜29で読み間違えた5級文字・音だけ5〜6個。新規は増やさない"}, {"day": 14, "date": "2026-08-31", "week": 3, "dow": "月", "phase": "文法＋語彙", "lesson": "第1課：저는 일본 사람입니다", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "🗂 Premium 402：文法 → 語尾と活用 → 第1課の입니다／입니까?など5級で既習の丁寧語尾だけ5例確認", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第1課：저는 일본 사람입니다", "minutes": 10}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "文法", "premium402Guide": "文法 → 語尾と活用 → 第1課の입니다／입니까?など5級で既習の丁寧語尾だけ5例確認"}, {"day": 15, "date": "2026-09-01", "week": 3, "dow": "火", "phase": "文法＋語彙", "lesson": "第1課：저는 일본 사람입니다", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "🗂 Premium 402：文法 → 語尾と活用 → 第1課の名詞＋입니다／입니까?を5例。意味→音声→復唱", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第1課：저는 일본 사람입니다", "minutes": 10}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現", "premium402Guide": "文法 → 語尾と活用 → 第1課の名詞＋입니다／입니까?を5例。意味→音声→復唱"}, {"day": 16, "date": "2026-09-02", "week": 3, "dow": "水", "phase": "文法＋語彙", "lesson": "第2課：일본 사람이 아닙니다", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "でき韓2課の既習語を6語確認（意味→音読1回。Premium 402は別タスク）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第2課：일본 사람이 아닙니다", "minutes": 10}, {"key": "premium_vocab", "label": "🗂 Premium 402：文法 → 語尾と活用 → 第2課の아닙니다系など5級で既習の否定表現だけ5例", "minutes": 5}], "isExam": false, "appGuide": "文法", "premium402Guide": "文法 → 語尾と活用 → 第2課の아닙니다系など5級で既習の否定表現だけ5例"}, {"day": 17, "date": "2026-09-03", "week": 3, "dow": "木", "phase": "文法＋語彙", "lesson": "第2課：일본 사람이 아닙니다", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "🗂 Premium 402：文法 → 語尾と活用 → 第1〜2課の肯定／否定の5級表現を5例だけ聞き比べ", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第2課：일본 사람이 아닙니다", "minutes": 10}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現", "premium402Guide": "文法 → 語尾と活用 → 第1〜2課の肯定／否定の5級表現を5例だけ聞き比べ"}, {"day": 18, "date": "2026-09-04", "week": 3, "dow": "金", "phase": "文法＋語彙", "lesson": "第3課：그건 뭐예요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "🗂 Premium 402：文法 → 指示語と疑問詞 → 第3課の이・그・저／뭐など5級の指示語・疑問詞を5〜6個", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第3課：그건 뭐예요?", "minutes": 10}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 5}], "isExam": false, "appGuide": "文法", "premium402Guide": "文法 → 指示語と疑問詞 → 第3課の이・그・저／뭐など5級の指示語・疑問詞を5〜6個"}, {"day": 19, "date": "2026-09-05", "week": 3, "dow": "土", "phase": "文法＋語彙", "lesson": "第3課：그건 뭐예요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "🗂 Premium 402：文法 → 指示語と疑問詞 → 第3課の5級指示語・疑問詞を質問→答えの形で5例確認", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第3課：그건 뭐예요?", "minutes": 10}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現", "premium402Guide": "文法 → 指示語と疑問詞 → 第3課の5級指示語・疑問詞を質問→答えの形で5例確認"}, {"day": 20, "date": "2026-09-06", "week": 3, "dow": "日", "phase": "文法＋語彙", "lesson": "第1〜3課 復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "でき韓1〜3課の既習語から迷う6語だけ復習（Premium 402は別タスク）", "minutes": 6}, {"key": "core", "label": "でき韓／合格トウミ：第1〜3課 復習", "minutes": 10}, {"key": "premium_vocab", "label": "🗂 Premium 402：文法 → 助詞 → 第1〜3課で出た은/는・이/가など、合格トウミ5級で確認済みの助詞だけ5〜6例", "minutes": 5}], "isExam": false, "appGuide": "すべて", "premium402Guide": "文法 → 助詞 → 第1〜3課で出た은/는・이/가など、合格トウミ5級で確認済みの助詞だけ5〜6例"}, {"day": 21, "date": "2026-09-07", "week": 4, "dow": "月", "phase": "文法＋語彙", "lesson": "第4課：약속이 있습니다", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "合格トウミ5級：その週の既習語を8〜10語チェック（知らない語に△）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第4課：약속이 있습니다", "minutes": 10}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "文法"}, {"day": 22, "date": "2026-09-08", "week": 4, "dow": "火", "phase": "文法＋語彙", "lesson": "第4課：약속이 있습니다", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "ハン検アプリ：直近の間違い語・表現だけ5〜8問見直し", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第4課：약속이 있습니다", "minutes": 10}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現"}, {"day": 23, "date": "2026-09-09", "week": 4, "dow": "水", "phase": "文法＋語彙", "lesson": "第5課：회사는 어디에 있어요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "でき韓5課の場所・建物語彙を6語確認（Premium 402は別タスク）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第5課：회사는 어디에 있어요?", "minutes": 10}, {"key": "premium_vocab", "label": "🗂 Premium 402：文法 → 時間帯・位置の言葉 → 第5課に合わせ、5級の場所・位置語だけ5〜6個。어디を含む既習表現を確認", "minutes": 5}], "isExam": false, "appGuide": "文法", "premium402Guide": "文法 → 時間帯・位置の言葉 → 第5課に合わせ、5級の場所・位置語だけ5〜6個。어디を含む既習表現を確認"}, {"day": 24, "date": "2026-09-10", "week": 4, "dow": "木", "phase": "文法＋語彙", "lesson": "第5課：회사는 어디에 있어요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "合格トウミ5級：その週の既習語を8〜10語チェック（知らない語に△）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第5課：회사는 어디에 있어요?", "minutes": 10}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現"}, {"day": 25, "date": "2026-09-11", "week": 4, "dow": "金", "phase": "文法＋語彙", "lesson": "第6課：주말에는 뭐 합니까?", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "ハン検アプリ：直近の間違い語・表現だけ5〜8問見直し", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第6課：주말에는 뭐 합니까?", "minutes": 10}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 5}], "isExam": false, "appGuide": "文法"}, {"day": 26, "date": "2026-09-12", "week": 4, "dow": "土", "phase": "文法＋語彙", "lesson": "第6課：주말에는 뭐 합니까?", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "🗂 Premium 402：語彙 → 趣味・スポーツ → 第6課の週末・趣味に結びつく5級語だけ6語。意味→音声→復唱", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第6課：주말에는 뭐 합니까?", "minutes": 10}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現", "premium402Guide": "語彙 → 趣味・スポーツ → 第6課の週末・趣味に結びつく5級語だけ6語。意味→音声→復唱"}, {"day": 27, "date": "2026-09-13", "week": 4, "dow": "日", "phase": "文法＋語彙", "lesson": "第4〜6課 復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 5, "minutes": 26, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 5}, {"key": "vocab", "label": "合格トウミ5級：第4〜6課相当の△語を6語だけ確認（Premium 402は別タスク）", "minutes": 6}, {"key": "core", "label": "でき韓／合格トウミ：第4〜6課 復習", "minutes": 10}, {"key": "premium_vocab", "label": "🗂 Premium 402：文法 → 助詞 → 第4〜6課で迷った5級助詞だけ5〜6例。合格トウミ5級掲載分に限定", "minutes": 5}], "isExam": false, "appGuide": "すべて", "premium402Guide": "文法 → 助詞 → 第4〜6課で迷った5級助詞だけ5〜6例。合格トウミ5級掲載分に限定"}, {"day": 28, "date": "2026-09-14", "week": 5, "dow": "月", "phase": "文法＋語彙", "lesson": "第7課：그렇게 멀지 않습니다", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "合格トウミ5級：その週の既習語を8〜10語チェック（知らない語に△）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第7課：그렇게 멀지 않습니다", "minutes": 11}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "文法"}, {"day": 29, "date": "2026-09-15", "week": 5, "dow": "火", "phase": "文法＋語彙", "lesson": "第7課：그렇게 멀지 않습니다", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "ハン検アプリ：直近の間違い語・表現だけ5〜8問見直し", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第7課：그렇게 멀지 않습니다", "minutes": 10}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 6}], "isExam": false, "appGuide": "会話・表現"}, {"day": 30, "date": "2026-09-16", "week": 5, "dow": "水", "phase": "文法＋語彙", "lesson": "第8課：언제 갑니까?", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "でき韓8課の既習語を6語確認（Premium 402は別タスク）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第8課：언제 갑니까?", "minutes": 10}, {"key": "premium_vocab", "label": "🗂 Premium 402：文法 → 指示語と疑問詞 → 第8課の언제など5級疑問詞を5〜6個。質問表現ごと音声確認", "minutes": 6}], "isExam": false, "appGuide": "文法", "premium402Guide": "文法 → 指示語と疑問詞 → 第8課の언제など5級疑問詞を5〜6個。質問表現ごと音声確認"}, {"day": 31, "date": "2026-09-17", "week": 5, "dow": "木", "phase": "文法＋語彙", "lesson": "第8課：언제 갑니까?", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "合格トウミ5級：その週の既習語を8〜10語チェック（知らない語に△）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第8課：언제 갑니까?", "minutes": 11}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現"}, {"day": 32, "date": "2026-09-18", "week": 5, "dow": "金", "phase": "文法＋語彙", "lesson": "第9課：부산까지 어떻게 가요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "ハン検アプリ：直近の間違い語・表現だけ5〜8問見直し", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第9課：부산까지 어떻게 가요?", "minutes": 10}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 6}], "isExam": false, "appGuide": "文法"}, {"day": 33, "date": "2026-09-19", "week": 5, "dow": "土", "phase": "文法＋語彙", "lesson": "第9課：부산까지 어떻게 가요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "🗂 Premium 402：語彙 → 交通 → 第9課に合わせ、バス・地下鉄・駅など5級交通語だけ6語", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第9課：부산까지 어떻게 가요?", "minutes": 11}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現", "premium402Guide": "語彙 → 交通 → 第9課に合わせ、バス・地下鉄・駅など5級交通語だけ6語"}, {"day": 34, "date": "2026-09-20", "week": 5, "dow": "日", "phase": "文法＋語彙", "lesson": "第7〜9課 復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "合格トウミ5級：第7〜9課相当の△語を6語だけ確認（Premium 402は別タスク）", "minutes": 6}, {"key": "core", "label": "でき韓／合格トウミ：第7〜9課 復習", "minutes": 10}, {"key": "premium_vocab", "label": "🗂 Premium 402：語彙 → 交通 → 第7〜9課で出た5級交通・移動語のうち迷う6語だけ再確認", "minutes": 6}], "isExam": false, "appGuide": "すべて", "premium402Guide": "語彙 → 交通 → 第7〜9課で出た5級交通・移動語のうち迷う6語だけ再確認"}, {"day": 35, "date": "2026-09-21", "week": 6, "dow": "月", "phase": "文法＋語彙", "lesson": "第10課：몇 시부터예요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "合格トウミ5級：その週の既習語を8〜10語チェック（知らない語に△）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第10課：몇 시부터예요?", "minutes": 11}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "文法"}, {"day": 36, "date": "2026-09-22", "week": 6, "dow": "火", "phase": "文法＋語彙", "lesson": "第10課：몇 시부터예요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "ハン検アプリ：直近の間違い語・表現だけ5〜8問見直し", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第10課：몇 시부터예요?", "minutes": 10}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 6}], "isExam": false, "appGuide": "会話・表現"}, {"day": 37, "date": "2026-09-23", "week": 6, "dow": "水", "phase": "文法＋語彙", "lesson": "第1〜5課 総復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "合格トウミ5級：第1〜5課の△語を6語だけ確認（Premium 402は別タスク）", "minutes": 6}, {"key": "core", "label": "でき韓／合格トウミ：第1〜5課 総復習", "minutes": 10}, {"key": "premium_vocab", "label": "🗂 Premium 402：文法 → 助詞 → 第1〜5課総復習。トウミ5級で△の助詞だけ5〜6例", "minutes": 6}], "isExam": false, "appGuide": "すべて", "premium402Guide": "文法 → 助詞 → 第1〜5課総復習。トウミ5級で△の助詞だけ5〜6例"}, {"day": 38, "date": "2026-09-24", "week": 6, "dow": "木", "phase": "文法＋語彙", "lesson": "第6〜10課 総復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "合格トウミ5級：その週の既習語を8〜10語チェック（知らない語に△）", "minutes": 6}, {"key": "core", "label": "でき韓／合格トウミ：第6〜10課 総復習", "minutes": 11}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "すべて"}, {"day": 39, "date": "2026-09-25", "week": 6, "dow": "金", "phase": "文法＋語彙", "lesson": "合格トウミ：5級の助詞・語尾を照合", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "ハン検アプリ：直近の間違い語・表現だけ5〜8問見直し", "minutes": 6}, {"key": "core", "label": "でき韓／合格トウミ：合格トウミ：5級の助詞・語尾を照合", "minutes": 10}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 6}], "isExam": false, "appGuide": "文法"}, {"day": 40, "date": "2026-09-26", "week": 6, "dow": "土", "phase": "文法＋語彙", "lesson": "数詞・時刻・曜日・人数を総整理", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "🗂 Premium 402：語彙 → 数と時間 → 漢数詞・固有数詞・時刻・曜日・人数の5級範囲から6〜8個", "minutes": 6}, {"key": "core", "label": "でき韓／合格トウミ：数詞・時刻・曜日・人数を総整理", "minutes": 11}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "語彙", "premium402Guide": "語彙 → 数と時間 → 漢数詞・固有数詞・時刻・曜日・人数の5級範囲から6〜8個"}, {"day": 41, "date": "2026-09-27", "week": 6, "dow": "日", "phase": "文法＋語彙", "lesson": "第1〜10課 確認", "vocab": "無料500語アプリは必須から除外", "typehangul": 3, "minutes": 25, "tasks": [{"key": "typehangul", "label": "TypeHangul：読み速度の維持", "minutes": 3}, {"key": "vocab", "label": "合格トウミ5級：第1〜10課の△語を6語だけ確認（Premium 402は別タスク）", "minutes": 6}, {"key": "core", "label": "でき韓／合格トウミ：第1〜10課 確認", "minutes": 10}, {"key": "premium_vocab", "label": "🗂 Premium 402：文法 → 助詞 → 第1〜10課で誤りやすい5級助詞だけ6例。新しい4級文法は見ない", "minutes": 6}], "isExam": false, "appGuide": "すべて", "premium402Guide": "文法 → 助詞 → 第1〜10課で誤りやすい5級助詞だけ6例。新しい4級文法は見ない"}, {"day": 42, "date": "2026-09-28", "week": 7, "dow": "月", "phase": "科目試験優先", "lesson": "慶應科目試験優先：新規文法なし", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 25, "tasks": [{"key": "vocab", "label": "科目試験優先：合格トウミの△語 or ハン検アプリ誤答を5分だけ", "minutes": 5}, {"key": "core", "label": "でき韓：既習範囲を音読1回（新規なし）", "minutes": 5}, {"key": "listen", "label": "聞き取り：既習音声を1本", "minutes": 5}, {"key": "review", "label": "合格トウミ：△印だけ確認", "minutes": 5}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "語彙"}, {"day": 43, "date": "2026-09-29", "week": 7, "dow": "火", "phase": "科目試験優先", "lesson": "慶應科目試験優先：新規文法なし", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 25, "tasks": [{"key": "vocab", "label": "科目試験優先：合格トウミの△語 or ハン検アプリ誤答を5分だけ", "minutes": 5}, {"key": "core", "label": "でき韓：既習範囲を音読1回（新規なし）", "minutes": 5}, {"key": "listen", "label": "聞き取り：既習音声を1本", "minutes": 5}, {"key": "review", "label": "合格トウミ：△印だけ確認", "minutes": 5}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 5}], "isExam": false, "appGuide": "発音・表記"}, {"day": 44, "date": "2026-09-30", "week": 7, "dow": "水", "phase": "科目試験優先", "lesson": "慶應科目試験優先：新規文法なし", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 25, "tasks": [{"key": "vocab", "label": "科目試験優先：合格トウミの△語 or ハン検アプリ誤答を5分だけ", "minutes": 5}, {"key": "core", "label": "でき韓：既習範囲を音読1回（新規なし）", "minutes": 5}, {"key": "listen", "label": "聞き取り：既習音声を1本", "minutes": 5}, {"key": "review", "label": "合格トウミ：△印だけ確認", "minutes": 5}, {"key": "premium_vocab", "label": "🗂 Premium 402：語彙 → よく使う動詞 → 第1〜10課で既習の5級動詞だけ6語。意味→音声1回→復唱1回", "minutes": 5}], "isExam": false, "appGuide": "語彙", "premium402Guide": "語彙 → よく使う動詞 → 第1〜10課で既習の5級動詞だけ6語。意味→音声1回→復唱1回"}, {"day": 45, "date": "2026-10-01", "week": 7, "dow": "木", "phase": "科目試験優先", "lesson": "慶應科目試験優先：新規文法なし", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 25, "tasks": [{"key": "vocab", "label": "科目試験優先：合格トウミの△語 or ハン検アプリ誤答を5分だけ", "minutes": 5}, {"key": "core", "label": "でき韓：既習範囲を音読1回（新規なし）", "minutes": 5}, {"key": "listen", "label": "聞き取り：既習音声を1本", "minutes": 5}, {"key": "review", "label": "合格トウミ：△印だけ確認", "minutes": 5}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現"}, {"day": 46, "date": "2026-10-02", "week": 7, "dow": "金", "phase": "科目試験優先", "lesson": "慶應科目試験優先：新規文法なし", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 25, "tasks": [{"key": "vocab", "label": "科目試験優先：合格トウミの△語 or ハン検アプリ誤答を5分だけ", "minutes": 5}, {"key": "core", "label": "でき韓：既習範囲を音読1回（新規なし）", "minutes": 5}, {"key": "listen", "label": "聞き取り：既習音声を1本", "minutes": 5}, {"key": "review", "label": "合格トウミ：△印だけ確認", "minutes": 5}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 5}], "isExam": false, "appGuide": "語彙"}, {"day": 47, "date": "2026-10-03", "week": 7, "dow": "土", "phase": "科目試験優先", "lesson": "慶應科目試験優先：新規文法なし", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 25, "tasks": [{"key": "vocab", "label": "科目試験優先：合格トウミの△語 or ハン検アプリ誤答を5分だけ", "minutes": 5}, {"key": "core", "label": "でき韓：既習範囲を音読1回（新規なし）", "minutes": 5}, {"key": "listen", "label": "聞き取り：既習音声を1本", "minutes": 5}, {"key": "review", "label": "合格トウミ：△印だけ確認", "minutes": 5}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "発音・表記"}, {"day": 48, "date": "2026-10-04", "week": 7, "dow": "日", "phase": "科目試験優先", "lesson": "慶應科目試験優先：新規文法なし", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 25, "tasks": [{"key": "vocab", "label": "科目試験優先：合格トウミの△語 or ハン検アプリ誤答を5分だけ", "minutes": 5}, {"key": "core", "label": "でき韓：既習範囲を音読1回（新規なし）", "minutes": 5}, {"key": "listen", "label": "聞き取り：既習音声を1本", "minutes": 5}, {"key": "review", "label": "合格トウミ：△印だけ確認", "minutes": 5}, {"key": "premium_vocab", "label": "🗂 Premium 402：文法 → 語尾と活用 → 科目試験週の維持。合格トウミ5級で確認済みの語尾だけ5例", "minutes": 5}], "isExam": false, "appGuide": "すべて", "premium402Guide": "文法 → 語尾と活用 → 科目試験週の維持。合格トウミ5級で確認済みの語尾だけ5例"}, {"day": 49, "date": "2026-10-05", "week": 8, "dow": "月", "phase": "5級範囲完成", "lesson": "第11課：언제 일본에 왔어요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 26, "tasks": [{"key": "vocab", "label": "合格トウミ5級：未確認語を8〜10語チェック → 未習/曖昧だけ△", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第11課：언제 일본에 왔어요?", "minutes": 10}, {"key": "toumi", "label": "合格トウミ：その日の文法・語彙を照合", "minutes": 5}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "文法"}, {"day": 50, "date": "2026-10-06", "week": 8, "dow": "火", "phase": "5級範囲完成", "lesson": "第11課：언제 일본에 왔어요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 26, "tasks": [{"key": "vocab", "label": "合格トウミ5級：未確認語を8〜10語チェック → 未習/曖昧だけ△", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第11課：언제 일본에 왔어요?", "minutes": 10}, {"key": "toumi", "label": "合格トウミ：その日の文法・語彙を照合", "minutes": 5}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現"}, {"day": 51, "date": "2026-10-07", "week": 8, "dow": "水", "phase": "5級範囲完成", "lesson": "第12課：성함이 어떻게 되세요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 26, "tasks": [{"key": "vocab", "label": "合格トウミ5級：未確認語を8〜10語チェック → 未習/曖昧だけ△", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第12課：성함이 어떻게 되세요?", "minutes": 10}, {"key": "toumi", "label": "合格トウミ：その日の文法・語彙を照合", "minutes": 5}, {"key": "premium_vocab", "label": "🗂 Premium 402：会話・表現 → 基本のあいさつ → 名前・自己紹介で使う5級表現だけ5例。4級寄りの高度な尊敬表現は除外", "minutes": 5}], "isExam": false, "appGuide": "文法", "premium402Guide": "会話・表現 → 基本のあいさつ → 名前・自己紹介で使う5級表現だけ5例。4級寄りの高度な尊敬表現は除外"}, {"day": 52, "date": "2026-10-08", "week": 8, "dow": "木", "phase": "5級範囲完成", "lesson": "第12課：성함이 어떻게 되세요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 26, "tasks": [{"key": "vocab", "label": "合格トウミ5級：未確認語を8〜10語チェック → 未習/曖昧だけ△", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第12課：성함이 어떻게 되세요?", "minutes": 10}, {"key": "toumi", "label": "合格トウミ：その日の文法・語彙を照合", "minutes": 5}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現"}, {"day": 53, "date": "2026-10-09", "week": 8, "dow": "金", "phase": "5級範囲完成", "lesson": "第13課：어디에 다녀 오셨어요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 26, "tasks": [{"key": "vocab", "label": "合格トウミ5級：未確認語を8〜10語チェック → 未習/曖昧だけ△", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第13課：어디에 다녀 오셨어요?", "minutes": 10}, {"key": "toumi", "label": "合格トウミ：その日の文法・語彙を照合", "minutes": 5}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 5}], "isExam": false, "appGuide": "文法"}, {"day": 54, "date": "2026-10-10", "week": 8, "dow": "土", "phase": "5級範囲完成", "lesson": "第13課：어디에 다녀 오셨어요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 26, "tasks": [{"key": "vocab", "label": "合格トウミ5級：未確認語を8〜10語チェック → 未習/曖昧だけ△", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第13課：어디에 다녀 오셨어요?", "minutes": 10}, {"key": "toumi", "label": "合格トウミ：その日の文法・語彙を照合", "minutes": 5}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現"}, {"day": 55, "date": "2026-10-11", "week": 8, "dow": "日", "phase": "5級範囲完成", "lesson": "第11〜13課 復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 26, "tasks": [{"key": "vocab", "label": "合格トウミ5級：未確認語を8〜10語チェック → 未習/曖昧だけ△", "minutes": 6}, {"key": "core", "label": "でき韓／合格トウミ：第11〜13課 復習", "minutes": 10}, {"key": "toumi", "label": "合格トウミ：その日の文法・語彙を照合", "minutes": 5}, {"key": "premium_vocab", "label": "🗂 Premium 402：文法 → 語尾と活用 → 第11〜13課のうち合格トウミ5級に載る既習語尾だけ5〜6例", "minutes": 5}], "isExam": false, "appGuide": "すべて", "premium402Guide": "文法 → 語尾と活用 → 第11〜13課のうち合格トウミ5級に載る既習語尾だけ5〜6例"}, {"day": 56, "date": "2026-10-12", "week": 9, "dow": "月", "phase": "第57回・弱点発見", "lesson": "第14課：한국과 일본은 비슷하지만 많이 다르지요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第57回の誤答語・誤答表現を5〜8個だけ修復（トウミで範囲確認）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第14課：한국과 일본은 비슷하지만 많이 다르지요?", "minutes": 8}, {"key": "mock57", "label": "第57回：聞き取り 前半", "minutes": 15}, {"key": "premium_listen", "label": "🎧 リスニング：耳慣らしだけ", "minutes": 2}], "isExam": false, "appGuide": "文法"}, {"day": 57, "date": "2026-10-13", "week": 9, "dow": "火", "phase": "第57回・弱点発見", "lesson": "第14課：한국과 일본은 비슷하지만 많이 다르지요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第57回の誤答語・誤答表現を5〜8個だけ修復（トウミで範囲確認）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第14課：한국과 일본은 비슷하지만 많이 다르지요?", "minutes": 8}, {"key": "mock57", "label": "第57回：聞き取り 後半", "minutes": 15}, {"key": "premium_listen", "label": "🎧 リスニング：耳慣らしだけ", "minutes": 2}], "isExam": false, "appGuide": "会話・表現"}, {"day": 58, "date": "2026-10-14", "week": 9, "dow": "水", "phase": "第57回・弱点発見", "lesson": "第15課：온천에 가고 싶어요", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第57回の誤答語・誤答表現を5〜8個だけ修復（トウミで範囲確認）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第15課：온천에 가고 싶어요", "minutes": 8}, {"key": "mock57", "label": "第57回：筆記 前半", "minutes": 15}, {"key": "premium_listen", "label": "🎧 リスニング：耳慣らしだけ", "minutes": 2}], "isExam": false, "appGuide": "文法"}, {"day": 59, "date": "2026-10-15", "week": 9, "dow": "木", "phase": "第57回・弱点発見", "lesson": "第15課：온천에 가고 싶어요", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第57回の誤答語・誤答表現を5〜8個だけ修復（トウミで範囲確認）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第15課：온천에 가고 싶어요", "minutes": 8}, {"key": "mock57", "label": "第57回：筆記 後半", "minutes": 15}, {"key": "premium_listen", "label": "🎧 リスニング：耳慣らしだけ", "minutes": 2}], "isExam": false, "appGuide": "会話・表現"}, {"day": 60, "date": "2026-10-16", "week": 9, "dow": "金", "phase": "第57回・弱点発見", "lesson": "第16課：선물을 사서 돈을 많이 써요", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第57回の誤答語・誤答表現を5〜8個だけ修復（トウミで範囲確認）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第16課：선물을 사서 돈을 많이 써요", "minutes": 8}, {"key": "mock57", "label": "第57回：採点＋ミスを6分類", "minutes": 15}, {"key": "premium_weak", "label": "🩹 苦手克服：第57回の誤答だけ", "minutes": 2}], "isExam": false, "appGuide": "文法"}, {"day": 61, "date": "2026-10-17", "week": 9, "dow": "土", "phase": "第57回・弱点発見", "lesson": "第16課：선물을 사서 돈을 많이 써요", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第57回の誤答語・誤答表現を5〜8個だけ修復（トウミで範囲確認）", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第16課：선물을 사서 돈을 많이 써요", "minutes": 8}, {"key": "mock57", "label": "第57回：誤答復習①", "minutes": 15}, {"key": "premium_weak", "label": "🩹 苦手克服：第57回の誤答だけ", "minutes": 2}], "isExam": false, "appGuide": "会話・表現"}, {"day": 62, "date": "2026-10-18", "week": 9, "dow": "日", "phase": "第57回・弱点発見", "lesson": "第14〜16課 復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第57回の誤答語・誤答表現を5〜8個だけ修復（トウミで範囲確認）", "minutes": 6}, {"key": "core", "label": "でき韓／合格トウミ：第14〜16課 復習", "minutes": 8}, {"key": "mock57", "label": "第57回：誤答復習②", "minutes": 15}, {"key": "premium_weak", "label": "🩹 苦手克服：第57回の誤答だけ", "minutes": 2}], "isExam": false, "appGuide": "すべて"}, {"day": 63, "date": "2026-10-19", "week": 10, "dow": "月", "phase": "弱点補修", "lesson": "第17課：결혼식에 뭘 입고 가면 돼요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 25, "tasks": [{"key": "vocab", "label": "弱点語彙：トウミ△＋第57回誤答から6〜8語だけ再確認", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第17課：결혼식에 뭘 입고 가면 돼요?", "minutes": 14}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "文法"}, {"day": 64, "date": "2026-10-20", "week": 10, "dow": "火", "phase": "弱点補修", "lesson": "第17課：결혼식에 뭘 입고 가면 돼요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 25, "tasks": [{"key": "vocab", "label": "弱点語彙：トウミ△＋第57回誤答から6〜8語だけ再確認", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第17課：결혼식에 뭘 입고 가면 돼요?", "minutes": 11}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 8}], "isExam": false, "appGuide": "会話・表現"}, {"day": 65, "date": "2026-10-21", "week": 10, "dow": "水", "phase": "弱点補修", "lesson": "第18課：식사라도 같이 할까요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 25, "tasks": [{"key": "vocab", "label": "弱点語彙：トウミ△＋第57回誤答から6〜8語だけ再確認", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第18課：식사라도 같이 할까요?", "minutes": 11}, {"key": "premium_vocab", "label": "🗂 Premium 402：語彙 → 食べ物・飲み物 → 第18課に合わせ、食事・飲み物の5級語だけ6語。新規4級語は覚えない", "minutes": 8}], "isExam": false, "appGuide": "文法", "premium402Guide": "語彙 → 食べ物・飲み物 → 第18課に合わせ、食事・飲み物の5級語だけ6語。新規4級語は覚えない"}, {"day": 66, "date": "2026-10-22", "week": 10, "dow": "木", "phase": "弱点補修", "lesson": "第18課：식사라도 같이 할까요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 25, "tasks": [{"key": "vocab", "label": "弱点語彙：トウミ△＋第57回誤答から6〜8語だけ再確認", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第18課：식사라도 같이 할까요?", "minutes": 14}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現"}, {"day": 67, "date": "2026-10-23", "week": 10, "dow": "金", "phase": "弱点補修", "lesson": "第19課：사진 좀 찍어 주시겠어요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 25, "tasks": [{"key": "vocab", "label": "弱点語彙：トウミ△＋第57回誤答から6〜8語だけ再確認", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第19課：사진 좀 찍어 주시겠어요?", "minutes": 11}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 8}], "isExam": false, "appGuide": "会話・表現"}, {"day": 68, "date": "2026-10-24", "week": 10, "dow": "土", "phase": "弱点補修", "lesson": "第20課：자전거를 탈 수 있어요?", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 26, "tasks": [{"key": "vocab", "label": "弱点語彙：トウミ△＋第57回誤答から6〜8語だけ再確認", "minutes": 6}, {"key": "core", "label": "できる韓国語 初級Ⅰ：第20課：자전거를 탈 수 있어요?", "minutes": 10}, {"key": "mock57review", "label": "第57回：誤答だけ再挑戦", "minutes": 5}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "文法"}, {"day": 69, "date": "2026-10-25", "week": 10, "dow": "日", "phase": "弱点補修", "lesson": "第11〜20課 総復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 26, "tasks": [{"key": "vocab", "label": "弱点語彙：トウミ△＋第57回誤答から6〜8語だけ再確認", "minutes": 6}, {"key": "core", "label": "でき韓／合格トウミ：第11〜20課 総復習", "minutes": 10}, {"key": "mock57review", "label": "第57回：誤答だけ再挑戦", "minutes": 5}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 5}], "isExam": false, "appGuide": "すべて"}, {"day": 70, "date": "2026-10-26", "week": 11, "dow": "月", "phase": "第58回・最終判定", "lesson": "第58回＋誤答分析", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第58回の誤答語・誤答表現を5〜8個だけ復習（新規語は増やさない）", "minutes": 6}, {"key": "mock58", "label": "第58回：聞き取り 前半", "minutes": 20}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "すべて"}, {"day": 71, "date": "2026-10-27", "week": 11, "dow": "火", "phase": "第58回・最終判定", "lesson": "第58回＋誤答分析", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第58回の誤答語・誤答表現を5〜8個だけ復習（新規語は増やさない）", "minutes": 6}, {"key": "mock58", "label": "第58回：聞き取り 後半", "minutes": 20}, {"key": "premium_vocab", "label": "🗂 Premium 402：会話・表現 → 場面別フレーズ → 第58回聞き取りで間違えた5級表現だけ5例。正解音声→復唱", "minutes": 5}], "isExam": false, "appGuide": "すべて", "premium402Guide": "会話・表現 → 場面別フレーズ → 第58回聞き取りで間違えた5級表現だけ5例。正解音声→復唱"}, {"day": 72, "date": "2026-10-28", "week": 11, "dow": "水", "phase": "第58回・最終判定", "lesson": "第58回＋誤答分析", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第58回の誤答語・誤答表現を5〜8個だけ復習（新規語は増やさない）", "minutes": 6}, {"key": "mock58", "label": "第58回：筆記 前半", "minutes": 20}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（5級）", "minutes": 5}], "isExam": false, "appGuide": "すべて"}, {"day": 73, "date": "2026-10-29", "week": 11, "dow": "木", "phase": "第58回・最終判定", "lesson": "第58回＋誤答分析", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第58回の誤答語・誤答表現を5〜8個だけ復習（新規語は増やさない）", "minutes": 6}, {"key": "mock58", "label": "第58回：筆記 後半", "minutes": 20}, {"key": "premium_vocab", "label": "🗂 Premium 402：読解 → よく出る掲示・案内 → 第58回筆記で間違えた5級の短い掲示・案内だけ5例。「その2」系は使わない", "minutes": 5}], "isExam": false, "appGuide": "すべて", "premium402Guide": "読解 → よく出る掲示・案内 → 第58回筆記で間違えた5級の短い掲示・案内だけ5例。「その2」系は使わない"}, {"day": 74, "date": "2026-10-30", "week": 11, "dow": "金", "phase": "第58回・最終判定", "lesson": "第58回＋誤答分析", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第58回の誤答語・誤答表現を5〜8個だけ復習（新規語は増やさない）", "minutes": 6}, {"key": "mock58", "label": "第58回：採点＋合格ライン確認", "minutes": 20}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 5}], "isExam": false, "appGuide": "すべて"}, {"day": 75, "date": "2026-10-31", "week": 11, "dow": "土", "phase": "第58回・最終判定", "lesson": "第58回＋誤答分析", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第58回の誤答語・誤答表現を5〜8個だけ復習（新規語は増やさない）", "minutes": 6}, {"key": "mock58", "label": "第58回：誤答復習①", "minutes": 20}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 5}], "isExam": false, "appGuide": "すべて"}, {"day": 76, "date": "2026-11-01", "week": 11, "dow": "日", "phase": "第58回・最終判定", "lesson": "第58回＋誤答分析", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 31, "tasks": [{"key": "vocab", "label": "第58回の誤答語・誤答表現を5〜8個だけ復習（新規語は増やさない）", "minutes": 6}, {"key": "mock58", "label": "第58回：誤答復習②＋新形式確認", "minutes": 20}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（直近の誤答だけ）", "minutes": 5}], "isExam": false, "appGuide": "すべて"}, {"day": 77, "date": "2026-11-02", "week": 12, "dow": "月", "phase": "最終仕上げ", "lesson": "最終総復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 27, "tasks": [{"key": "vocab", "label": "最終弱点語彙：トウミ△・過去問誤答だけ5〜8語確認", "minutes": 6}, {"key": "core", "label": "合格トウミ／でき韓：語彙×：即答できない語だけ", "minutes": 8}, {"key": "mistakes", "label": "第57・58回：誤答だけ見直し", "minutes": 8}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（弱点音声だけ）", "minutes": 5}], "isExam": false, "appGuide": "語彙"}, {"day": 78, "date": "2026-11-03", "week": 12, "dow": "火", "phase": "最終仕上げ", "lesson": "最終総復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 27, "tasks": [{"key": "vocab", "label": "最終弱点語彙：トウミ△・過去問誤答だけ5〜8語確認", "minutes": 6}, {"key": "core", "label": "合格トウミ／でき韓：助詞・語尾", "minutes": 8}, {"key": "mistakes", "label": "第57・58回：誤答だけ見直し", "minutes": 8}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（×問題だけ）", "minutes": 5}], "isExam": false, "appGuide": "文法"}, {"day": 79, "date": "2026-11-04", "week": 12, "dow": "水", "phase": "最終仕上げ", "lesson": "最終総復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 27, "tasks": [{"key": "vocab", "label": "最終弱点語彙：トウミ△・過去問誤答だけ5〜8語確認", "minutes": 6}, {"key": "core", "label": "合格トウミ／でき韓：数字・時刻・曜日", "minutes": 8}, {"key": "mistakes", "label": "第57・58回：誤答だけ見直し", "minutes": 8}, {"key": "premium_vocab", "label": "🗂 Premium 402：語彙 → 数と時間 → 過去問で×だった数字・時刻・曜日だけ5〜6個。新規語なし", "minutes": 5}], "isExam": false, "appGuide": "発音・表記", "premium402Guide": "語彙 → 数と時間 → 過去問で×だった数字・時刻・曜日だけ5〜6個。新規語なし"}, {"day": 80, "date": "2026-11-05", "week": 12, "dow": "木", "phase": "最終仕上げ", "lesson": "最終総復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 27, "tasks": [{"key": "vocab", "label": "最終弱点語彙：トウミ△・過去問誤答だけ5〜8語確認", "minutes": 6}, {"key": "core", "label": "合格トウミ／でき韓：あいさつ・頻出表現", "minutes": 8}, {"key": "mistakes", "label": "第57・58回：誤答だけ見直し", "minutes": 8}, {"key": "premium_listen", "label": "🎧 プレミアム：リスニング（弱点音声だけ）", "minutes": 5}], "isExam": false, "appGuide": "会話・表現"}, {"day": 81, "date": "2026-11-06", "week": 12, "dow": "金", "phase": "最終仕上げ", "lesson": "最終総復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 27, "tasks": [{"key": "vocab", "label": "最終弱点語彙：トウミ△・過去問誤答だけ5〜8語確認", "minutes": 6}, {"key": "core", "label": "合格トウミ／でき韓：聞き取り弱点", "minutes": 8}, {"key": "mistakes", "label": "第57・58回：誤答だけ見直し", "minutes": 8}, {"key": "premium_weak", "label": "🩹 プレミアム：苦手克服（×問題だけ）", "minutes": 5}], "isExam": false, "appGuide": "読解"}, {"day": 82, "date": "2026-11-07", "week": 12, "dow": "土", "phase": "最終仕上げ", "lesson": "最終総復習", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 27, "tasks": [{"key": "vocab", "label": "最終弱点語彙：トウミ△・過去問誤答だけ5〜8語確認", "minutes": 6}, {"key": "core", "label": "合格トウミ／でき韓：誤答だけ軽く確認", "minutes": 8}, {"key": "mistakes", "label": "第57・58回：誤答だけ見直し", "minutes": 8}, {"key": "premium_vocab", "label": "🗂 Premium 402：会話・表現 → 基本のあいさつ → トウミ△・過去問×の5級あいさつだけ最終5例。新規・4級内容なし", "minutes": 5}], "isExam": false, "appGuide": "すべて", "premium402Guide": "会話・表現 → 基本のあいさつ → トウミ△・過去問×の5級あいさつだけ最終5例。新規・4級内容なし"}, {"day": 83, "date": "2026-11-08", "week": 12, "dow": "日", "phase": "本番", "lesson": "ハン検5級 本番", "vocab": "無料500語アプリは必須から除外", "typehangul": 0, "minutes": 23, "tasks": [{"key": "vocab", "label": "本番当日：新しい語彙は増やさない（×だけ軽く確認）", "minutes": 3}, {"key": "core", "label": "最終確認：数字・助詞・あいさつを眺める", "minutes": 5}, {"key": "listen", "label": "耳慣らし：聞き取り音声を軽く1本", "minutes": 5}, {"key": "vocab", "label": "単語：最後まで残った×だけ", "minutes": 5}, {"key": "ready", "label": "受験票・筆記具・会場確認", "minutes": 5}], "isExam": true, "appGuide": "本番"}];
 (function(){
- const STORAGE_KEY="hangeul5_daily_wbs_2026_v5"; // keep same key so existing progress survives
- let mem={tasks:{},notes:{}};
- function load(){try{const x=localStorage.getItem(STORAGE_KEY);if(x)mem=JSON.parse(x)}catch(e){};if(!mem.tasks)mem.tasks={};if(!mem.notes)mem.notes={}}
+ const STORAGE_KEY="hangeul5_daily_wbs_2026_v5"; // same key: existing progress survives
+ const APP_VERSION="v2.0.0",APP_UPDATED="2026-08-20";
+ let mem={tasks:{},notes:{},weak:[],ui:{view:"today",week:"",material:""},meta:{}};
+ function normalizeMem(){
+   if(!mem||typeof mem!=="object")mem={};
+   if(!mem.tasks||typeof mem.tasks!=="object")mem.tasks={};
+   if(!mem.notes||typeof mem.notes!=="object")mem.notes={};
+   if(!Array.isArray(mem.weak))mem.weak=[];
+   if(!mem.ui||typeof mem.ui!=="object")mem.ui={};
+   if(!["today","incomplete","all"].includes(mem.ui.view))mem.ui.view="today";
+   if(typeof mem.ui.week!=="string")mem.ui.week="";
+   if(typeof mem.ui.material!=="string")mem.ui.material="";
+   if(typeof mem.ui.rescue!=="boolean")mem.ui.rescue=false;
+   if(!mem.meta||typeof mem.meta!=="object")mem.meta={};
+ }
+ function load(){try{const x=localStorage.getItem(STORAGE_KEY);if(x)mem=JSON.parse(x)}catch(e){}normalizeMem()}
  function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(mem))}catch(e){}}
  function idFor(d,t,i){return `${d.date}:${t.key}:${i}`}
- function dayDone(el){const c=[...el.querySelectorAll(".taskcheck")];return c.length&&c.every(x=>x.checked)}
  function fmt(iso){const x=new Date(iso+"T00:00:00");return `${x.getMonth()+1}/${x.getDate()}`}
  function todayISO(){const x=new Date();return `${x.getFullYear()}-${String(x.getMonth()+1).padStart(2,"0")}-${String(x.getDate()).padStart(2,"0")}`}
  function planToday(){const now=todayISO();return DAYS.find(d=>d.date===now)||DAYS[0]}
+ function staticDayDone(d){
+   return d.tasks.length>0&&d.tasks.every((t,i)=>!!mem.tasks[idFor(d,t,i)]);
+ }
+ function dayDone(el){const c=[...el.querySelectorAll(".taskcheck")];return c.length>0&&c.every(x=>x.checked)}
  function premiumLabel(d){
    const a=[];
    if(d.premium402Guide)a.push("402："+d.premium402Guide);
@@ -2298,43 +2473,270 @@ const DAYS=[{"day": 1, "date": "2026-08-18", "week": 1, "dow": "火", "phase": "
    if(d.tasks.some(t=>t.key==="premium_weak"))a.push("苦手克服");
    return a.length?a.join(" / "):"なし";
  }
+ function remainingFor(d){
+   const pending=d.tasks.map((t,i)=>({t,i,id:idFor(d,t,i)})).filter(x=>!mem.tasks[x.id]);
+   return {count:pending.length,minutes:pending.reduce((s,x)=>s+(x.t.minutes||0),0),pending};
+ }
+ function materialMatch(d,mat){
+   if(!mat)return true;
+   const blob=(d.lesson+" "+d.phase+" "+d.tasks.map(t=>t.label+" "+t.key).join(" ")+" "+(d.premium402Guide||"")).toLowerCase();
+   const tests={
+     peugi:/ペウギ/,
+     dekiru:/でき韓|できる韓国語/,
+     typehangul:/typehangul/i,
+     app:/ハン検アプリ|premium_listen|premium_weak/,
+     premium402:/premium 402|プレミアム単語集402|402：|premium_vocab/,
+     toumi:/トウミ/,
+     past:/第57回|第58回|過去問/
+   };
+   return tests[mat]?tests[mat].test(blob):true;
+ }
+ function taskPriority(t){
+   const s=(t.key+" "+t.label).toLowerCase();
+   if(/premium_weak|誤答|間違|第57回|第58回|過去問/.test(s))return 100;
+   if(/peugi|ペウギ|dekiru|でき韓|できる韓国語/.test(s))return 90;
+   if(/app|ハン検アプリ/.test(s))return 80;
+   if(/toumi|トウミ/.test(s))return 75;
+   if(/premium_vocab|premium 402|402/.test(s))return 70;
+   if(/listen|リスニング|聞き取り/.test(s))return 65;
+   if(/vocab|語彙|単語/.test(s))return 60;
+   if(/typehangul/.test(s))return 55;
+   return 50;
+ }
+ function rescuePlan(d){
+   const pending=d.tasks.map((t,i)=>({t,i,id:idFor(d,t,i)}))
+     .filter(x=>!mem.tasks[x.id]&&(x.t.minutes||0)>0)
+     .sort((a,b)=>taskPriority(b.t)-taskPriority(a.t)||a.i-b.i);
+   let left=10,plan=[];
+   for(const x of pending){
+     if(left<=0)break;
+     const use=Math.min(left,Math.max(1,x.t.minutes||1));
+     plan.push({label:x.t.label,minutes:use,id:x.id});
+     left-=use;
+   }
+   return plan;
+ }
+ function renderRescue(){
+   const panel=document.getElementById("rescueMode"),btn=document.getElementById("rescueBtn"),d=planToday();
+   const active=!!mem.ui.rescue;
+   panel.classList.toggle("hidden",!active);
+   document.getElementById("todayPanel").classList.toggle("rescue-active",active);
+   btn.textContent=active?"↩️ 通常モードに戻す":"🆘 10分救済モード";
+   if(!active)return;
+   const plan=rescuePlan(d),list=document.getElementById("rescueList");
+   if(!plan.length){list.innerHTML='<div class="rescue-item"><b>0分</b><span>今日の通常タスクはすべて完了しています ✓</span></div>';return}
+   list.innerHTML=plan.map(x=>`<div class="rescue-item"><b>${x.minutes}分</b><span>${escapeHtml(x.label)}</span></div>`).join("");
+ }
+ function overdueData(){
+   const now=todayISO(),days=[],items=[];
+   DAYS.filter(d=>d.date<now).forEach(d=>{
+     const pending=d.tasks.map((t,i)=>({d,t,id:idFor(d,t,i)})).filter(x=>!mem.tasks[x.id]&&(x.t.minutes||0)>0);
+     if(pending.length){days.push({d,pending});items.push(...pending)}
+   });
+   return {days,items,minutes:items.reduce((s,x)=>s+(x.t.minutes||0),0)};
+ }
+ function renderLag(){
+   const data=overdueData(),panel=document.getElementById("lagPanel");
+   panel.classList.toggle("hidden",data.days.length===0);
+   if(!data.days.length)return;
+   const n=data.days.length,count=data.items.length,mins=data.minutes,oldest=data.days[0].d;
+   document.getElementById("lagTitle").textContent=`⚠️ ${n} Day分の未完了を検知`;
+   document.getElementById("lagStats").innerHTML=
+     `<span class="lag-chip">最古 ${fmt(oldest.date)}</span><span class="lag-chip">${count}タスク</span><span class="lag-chip">残り約${mins}分</span>`;
+   let advice="";
+   if(n===1)advice="今日は今日分を優先。余力があれば、最古の持ち越しを10分だけ回収。全部取り返そうとしなくてOK。";
+   else if(n<=3)advice="3日で回収する想定。今日の学習は10〜15分に圧縮し、持ち越しは1日10分まで。古いものから1〜2タスクずつ戻す。";
+   else advice="一気に追いつこうとしない。10分救済モードで今日分を守り、持ち越しは1日10分上限。週末に20〜30分だけ回収枠を作る。";
+   document.getElementById("lagAdvice").textContent=advice;
+ }
+ function runDiagnostics(showAlert=false){
+   const planned=DAYS.flatMap(d=>d.tasks.map((t,i)=>idFor(d,t,i)));
+   const plannedSet=new Set(planned);
+   const domIds=[...document.querySelectorAll(".daycard .taskcheck")].map(x=>x.dataset.task);
+   const domSet=new Set(domIds);
+   const duplicatePlanned=planned.length-plannedSet.size;
+   const duplicateDom=domIds.length-domSet.size;
+   const missingDom=planned.filter(id=>!domSet.has(id)).length;
+   const extraSaved=Object.keys(mem.tasks||{}).filter(id=>!plannedSet.has(id)).length;
+   const checked=planned.filter(id=>!!mem.tasks[id]).length;
+   const notes=Object.values(mem.notes||{}).filter(v=>String(v||"").trim()).length;
+   const weak=Array.isArray(mem.weak)?mem.weak.length:0;
+   let storageOK=true;
+   try{localStorage.setItem("__wbs_diag__","1");storageOK=localStorage.getItem("__wbs_diag__")==="1";localStorage.removeItem("__wbs_diag__")}catch(e){storageOK=false}
+   const checks=[
+     {name:"保存キー",ok:STORAGE_KEY==="hangeul5_daily_wbs_2026_v5",text:STORAGE_KEY},
+     {name:"予定タスクID",ok:planned.length===335&&duplicatePlanned===0,text:`${planned.length}件 / 重複${duplicatePlanned}`},
+     {name:"画面内チェックID",ok:domIds.length===335&&duplicateDom===0&&missingDom===0,text:`${domIds.length}件 / 欠落${missingDom} / 重複${duplicateDom}`},
+     {name:"localStorage",ok:storageOK,text:storageOK?"読み書きOK":"読み書き不可"},
+     {name:"保存済み進捗",ok:true,text:`${checked}件チェック済み`},
+     {name:"メモ・苦手BOX",ok:true,text:`メモ${notes}件 / 苦手${weak}件`},
+     {name:"旧IDの残骸",ok:extraSaved===0,text:extraSaved===0?"0件":"保存内に"+extraSaved+"件"},
+     {name:"アプリ版",ok:true,text:`${APP_VERSION} / ${APP_UPDATED}`}
+   ];
+   const bad=checks.filter(x=>!x.ok).length;
+   document.getElementById("diagSummary").textContent=bad?`⚠️ ${bad}項目要確認`:"✅ 正常";
+   document.getElementById("diagOutput").innerHTML=checks.map(x=>
+     `<div class="diag-row"><strong>${escapeHtml(x.name)}</strong><span class="${x.ok?"diag-ok":"diag-bad"}">${x.ok?"✓ ":"⚠ "}${escapeHtml(x.text)}</span></div>`
+   ).join("");
+   if(showAlert)alert(bad?"要確認項目があります。診断欄を確認してください。":"データ診断：すべて正常です。");
+   return bad===0;
+ }
  function renderToday(){
-   const d=planToday();
+   const d=planToday(),r=remainingFor(d);
    document.getElementById("todayTitle").textContent=`今日の学習｜${fmt(d.date)}（${d.dow}）`;
    document.getElementById("todayMeta").textContent=`${d.phase} ・ 合計 ${d.minutes}分`;
    document.getElementById("todayMin").textContent=d.minutes+"分";
+   document.getElementById("todayStatus").textContent=r.count===0?`全${d.tasks.length}件 完了 ✓`:`${d.tasks.length-r.count}/${d.tasks.length}完了・残り${r.count}件・約${r.minutes}分`;
    document.getElementById("todayLesson").textContent=d.lesson;
    document.getElementById("todayVocab").textContent=(d.tasks.find(t=>t.key==="vocab")||{}).label||"なし";
    document.getElementById("todayPremium").textContent=premiumLabel(d);
    document.getElementById("todayAppGuide").textContent=d.appGuide||"なし";
    document.getElementById("todayTasks").innerHTML=d.tasks.map((t,i)=>{
-     const id=idFor(d,t,i), done=!!mem.tasks[id], min=t.minutes?t.minutes+"分":"休み";
+     const id=idFor(d,t,i),done=!!mem.tasks[id],min=t.minutes?t.minutes+"分":"休み";
      return `<label class="todaytask"><input type="checkbox" class="taskcheck" data-task="${id}" ${done?"checked":""}><span class="tasktext">${t.label}</span><span class="mins">${min}</span></label>`;
    }).join("");
-   document.querySelectorAll("#todayTasks .taskcheck").forEach(c=>c.addEventListener("change",()=>{mem.tasks[c.dataset.task]=c.checked;save();syncUI(false)}));const tc=[...document.querySelectorAll("#todayTasks .taskcheck")];document.getElementById("todayPanel").classList.toggle("completed",tc.length>0&&tc.every(x=>x.checked));
+   const tm=document.getElementById("todayMemo");
+   tm.value=mem.notes[d.date]||"";
+   tm.oninput=()=>{mem.notes[d.date]=tm.value;save();const staticMemo=document.querySelector(`.memo[data-note="${d.date}"]`);if(staticMemo)staticMemo.value=tm.value};
+   document.querySelectorAll("#todayTasks .taskcheck").forEach(c=>c.addEventListener("change",()=>{
+     mem.tasks[c.dataset.task]=c.checked;save();syncUI(false);
+   }));
+   document.getElementById("todayPanel").classList.toggle("completed",r.count===0);
+   renderRescue();
+ }
+ function renderCarry(){
+   const now=todayISO(),items=[];
+   DAYS.filter(d=>d.date<now).forEach(d=>{
+     d.tasks.forEach((t,i)=>{const id=idFor(d,t,i);if(!mem.tasks[id])items.push({d,t,id})});
+   });
+   const panel=document.getElementById("carryPanel"),list=document.getElementById("carryList");
+   document.getElementById("carryCount").textContent=items.length?`${items.length}件`:"";
+   panel.classList.toggle("hidden",items.length===0);
+   list.innerHTML=items.slice(0,5).map(x=>`<div class="carryitem"><span><b>${fmt(x.d.date)}</b>｜${x.t.label}</span><button type="button" data-jump="${x.d.date}">開く</button></div>`).join("")+(items.length>5?`<button type="button" id="carryAllBtn">残り${items.length-5}件も見る</button>`:"");
+   list.querySelectorAll("[data-jump]").forEach(b=>b.addEventListener("click",()=>{setView("incomplete");requestAnimationFrame(()=>document.getElementById("day-"+b.dataset.jump)?.scrollIntoView({behavior:"smooth",block:"start"}))}));
+   document.getElementById("carryAllBtn")?.addEventListener("click",()=>setView("incomplete"));
+ }
+ function renderWeak(){
+   const list=document.getElementById("weakList");
+   document.getElementById("weakCount").textContent=mem.weak.length+"件";
+   if(!mem.weak.length){list.innerHTML='<div class="emptyhint">まだ登録なし。間違えた語・音・文法をここへ。</div>';return}
+   list.innerHTML=mem.weak.map(w=>`<div class="weakitem"><span class="weakcat">${w.cat}</span><span class="weaktxt">${escapeHtml(w.text)}</span><button class="iconbtn" type="button" data-weakdone="${w.id}">✓</button><button class="iconbtn" type="button" data-weakdel="${w.id}">×</button></div>`).join("");
+   list.querySelectorAll("[data-weakdone]").forEach(b=>b.addEventListener("click",()=>{mem.weak=mem.weak.filter(w=>w.id!==b.dataset.weakdone);save();renderWeak();renderExamMode()}));
+   list.querySelectorAll("[data-weakdel]").forEach(b=>b.addEventListener("click",()=>{mem.weak=mem.weak.filter(w=>w.id!==b.dataset.weakdel);save();renderWeak();renderExamMode()}));
+ }
+ function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+ function addWeak(text,cat){
+   text=(text||"").trim();if(!text)return;
+   mem.weak.unshift({id:String(Date.now())+Math.random().toString(16).slice(2),text,cat:cat||"メモ",created:new Date().toISOString()});
+   save();renderWeak();renderExamMode();
+ }
+ function renderExamMode(){
+   const now=todayISO(),panel=document.getElementById("examMode"),d=planToday();
+   const active=now>="2026-11-02"&&now<="2026-11-08";
+   panel.classList.toggle("hidden",!active);
+   if(!active)return;
+   const exam=new Date("2026-11-08T00:00:00"),today=new Date(now+"T00:00:00"),diff=Math.max(0,Math.ceil((exam-today)/86400000));
+   document.getElementById("examModeTitle").textContent=now==="2026-11-08"?"🎯 ハン検5級 本番":"🔥 試験直前モード｜D-"+diff;
+   const focus=now==="2026-11-08"?"新しいことはしない。×だけ軽く確認":(d.appGuide||d.lesson);
+   document.getElementById("examFocus").textContent=focus;
+   document.getElementById("examWeak").textContent=mem.weak.length?`${mem.weak.length}件。上から優先して潰す`:"0件。過去問の×だけ確認";
+ }
+ function renderBackupStamp(){
+   const s=mem.meta.lastBackup;
+   document.getElementById("backupStamp").textContent=s?`最終：${new Date(s).toLocaleString("ja-JP",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})}`:"未バックアップ";
+ }
+ function setView(view){
+   mem.ui.view=view;save();
+   document.querySelectorAll(".viewtab").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
+   applyFilters();
  }
  function applyFilters(){
-   const w=document.getElementById("weekFilter").value,s=document.getElementById("statusFilter").value;
+   const view=mem.ui.view||"today",w=document.getElementById("weekFilter").value,mat=document.getElementById("materialFilter").value;
+   mem.ui.week=w;mem.ui.material=mat;save();
+   document.querySelectorAll(".viewtab").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
+   let visibleDays=0;
    document.querySelectorAll(".week").forEach(week=>{
-     const wok=!w||week.dataset.week===w;let any=false;
-     week.querySelectorAll(".daycard").forEach(day=>{const done=dayDone(day);const sok=!s||(s==="done"&&done)||(s==="open"&&!done);day.classList.toggle("hidden",!(wok&&sok));if(wok&&sok)any=true});
-     week.classList.toggle("hidden",!any);
-   })
+     let any=false;
+     week.querySelectorAll(".daycard").forEach(day=>{
+       const d=DAYS.find(x=>x.date===day.dataset.day),done=dayDone(day);
+       const viewOK=view==="all"||(view==="incomplete"&&!done);
+       const weekOK=!w||week.dataset.week===w;
+       const matOK=d?materialMatch(d,mat):true;
+       const show=view!=="today"&&viewOK&&weekOK&&matOK;
+       day.classList.toggle("hidden",!show);
+       if(show){any=true;visibleDays++}
+     });
+     week.classList.toggle("hidden",view==="today"||!any);
+   });
+   document.getElementById("scheduleEmpty").classList.toggle("hidden",view==="today"||visibleDays>0);
  }
  function syncUI(rerender=true){
    document.querySelectorAll(".daycard .taskcheck").forEach(c=>c.checked=!!mem.tasks[c.dataset.task]);
    document.querySelectorAll(".memo").forEach(n=>n.value=mem.notes[n.dataset.note]||"");
-   const ds=[...document.querySelectorAll(".daycard")];ds.forEach(day=>{const doneDay=dayDone(day);day.classList.toggle("completed",doneDay);day.open=!doneDay;});const done=ds.filter(dayDone).length,pct=Math.round(done/83*100);
-   document.getElementById("doneDays").textContent=done+" / 83";document.getElementById("pct").textContent=pct+"%";document.getElementById("progress").style.width=pct+"%";const tc=[...document.querySelectorAll("#todayTasks .taskcheck")];document.getElementById("todayPanel").classList.toggle("completed",tc.length>0&&tc.every(x=>x.checked));
-   const exam=new Date("2026-11-08T00:00:00"),now=new Date(),diff=Math.max(0,Math.ceil((exam-now)/86400000));document.getElementById("daysLeft").textContent=diff+"日";
-   if(rerender)renderToday();applyFilters();
+   const now=todayISO(),ds=[...document.querySelectorAll(".daycard")];
+   ds.forEach(day=>{
+     const doneDay=dayDone(day),iso=day.dataset.day;
+     day.classList.toggle("completed",doneDay);
+     day.classList.toggle("current",iso===now);
+     day.classList.toggle("overdue",iso<now&&!doneDay);
+     day.open=!doneDay;
+   });
+   const done=ds.filter(dayDone).length,pct=Math.round(done/83*100);
+   document.getElementById("doneDays").textContent=done+" / 83";
+   document.getElementById("pct").textContent=pct+"%";
+   document.getElementById("progress").style.width=pct+"%";
+   const exam=new Date("2026-11-08T00:00:00"),today=new Date(now+"T00:00:00"),diff=Math.max(0,Math.ceil((exam-today)/86400000));
+   document.getElementById("daysLeft").textContent=diff+"日";
+   if(rerender)renderToday();
+   else{
+     const d=planToday(),r=remainingFor(d);
+     document.getElementById("todayStatus").textContent=r.count===0?`全${d.tasks.length}件 完了 ✓`:`${d.tasks.length-r.count}/${d.tasks.length}完了・残り${r.count}件・約${r.minutes}分`;
+     document.getElementById("todayPanel").classList.toggle("completed",r.count===0);
+   }
+   renderCarry();renderWeak();renderExamMode();renderBackupStamp();renderLag();renderRescue();runDiagnostics(false);applyFilters();
+ }
+ function exportBackup(){
+   mem.meta.lastBackup=new Date().toISOString();save();renderBackupStamp();
+   const payload={app:"ハン検5級 Daily WBS",version:APP_VERSION,storageKey:STORAGE_KEY,exportedAt:new Date().toISOString(),data:mem};
+   const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+   const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+   a.download=`hangeul5-wbs-backup-${todayISO()}.json`;
+   document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+ }
+ async function importBackup(file){
+   try{
+     const raw=await file.text(),obj=JSON.parse(raw),incoming=obj&&obj.data?obj.data:obj;
+     if(!incoming||typeof incoming!=="object"||!incoming.tasks)throw new Error("invalid");
+     const taskCount=Object.keys(incoming.tasks||{}).length,noteCount=Object.keys(incoming.notes||{}).length,weakCount=Array.isArray(incoming.weak)?incoming.weak.length:0;
+     if(!confirm(`バックアップを復元しますか？\nチェック ${taskCount}件 / メモ ${noteCount}件 / 苦手BOX ${weakCount}件`))return;
+     mem=incoming;normalizeMem();save();syncUI();
+     alert("復元しました。");
+   }catch(e){alert("このファイルはWBSバックアップとして読み込めませんでした。")}
  }
  load();
+ // Restore saved UI choices
+ document.getElementById("weekFilter").value=mem.ui.week||"";
+ document.getElementById("materialFilter").value=mem.ui.material||"";
  document.querySelectorAll(".daycard .taskcheck").forEach(c=>c.addEventListener("change",()=>{mem.tasks[c.dataset.task]=c.checked;save();syncUI()}));
- document.querySelectorAll(".memo").forEach(n=>n.addEventListener("input",()=>{mem.notes[n.dataset.note]=n.value;save()}));
- document.getElementById("weekFilter").addEventListener("change",applyFilters);document.getElementById("statusFilter").addEventListener("change",applyFilters);
- document.getElementById("todayBtn").addEventListener("click",()=>{const d=planToday();document.getElementById("day-"+d.date)?.scrollIntoView({behavior:"smooth",block:"start"})});
- document.getElementById("clearBtn").addEventListener("click",()=>{if(confirm("すべてのチェックを解除しますか？")){mem.tasks={};save();syncUI()}});
+ document.querySelectorAll(".memo").forEach(n=>n.addEventListener("input",()=>{mem.notes[n.dataset.note]=n.value;save();if(n.dataset.note===planToday().date)document.getElementById("todayMemo").value=n.value}));
+ document.querySelectorAll(".viewtab").forEach(b=>b.addEventListener("click",()=>setView(b.dataset.view)));
+ document.getElementById("weekFilter").addEventListener("change",applyFilters);
+ document.getElementById("materialFilter").addEventListener("change",applyFilters);
+ document.getElementById("weakAddBtn").addEventListener("click",()=>{const i=document.getElementById("weakInput");addWeak(i.value,document.getElementById("weakCat").value);i.value="";i.focus()});
+ document.getElementById("weakInput").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("weakAddBtn").click()});
+ document.getElementById("memoToWeakBtn").addEventListener("click",()=>{const t=document.getElementById("todayMemo").value.trim();if(!t)return alert("今日のメモが空です。");addWeak(t,"メモ");alert("苦手BOXに追加しました。")});
+ document.getElementById("backupBtn").addEventListener("click",exportBackup);
+ document.getElementById("restoreBtn").addEventListener("click",()=>document.getElementById("restoreFile").click());
+ document.getElementById("restoreFile").addEventListener("change",e=>{const f=e.target.files&&e.target.files[0];if(f)importBackup(f);e.target.value=""});
+ document.getElementById("rescueBtn").addEventListener("click",()=>{
+   mem.ui.rescue=!mem.ui.rescue;save();renderRescue();
+ });
+ document.getElementById("lagRescueBtn").addEventListener("click",()=>{
+   mem.ui.rescue=true;save();renderRescue();document.getElementById("rescueMode").scrollIntoView({behavior:"smooth",block:"center"});
+ });
+ document.getElementById("lagIncompleteBtn").addEventListener("click",()=>setView("incomplete"));
+ document.getElementById("diagBtn").addEventListener("click",()=>runDiagnostics(true));
+ document.getElementById("clearBtn").addEventListener("click",()=>{if(confirm("すべてのチェックだけを解除しますか？\nメモと苦手BOXは残ります。")){mem.tasks={};save();syncUI()}});
  syncUI();
 })();
 </script>
